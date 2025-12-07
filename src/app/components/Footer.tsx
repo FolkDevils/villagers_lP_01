@@ -2,16 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FOOTER_LINKS = [
-  { label: "About", href: "#" },
   { label: "Privacy Policy", href: "#" },
   { label: "Terms & Conditions", href: "#" },
   { label: "Contact", href: "#" },
-  { label: "Impact", href: "#" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="w-full max-w-[1440px] mx-auto px-8 pb-16">
+    <footer className="w-full max-w-[1440px] mx-auto px-16 pb-16">
       <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 lg:gap-0">
         {/* Mobile Logo (Top Left) */}
         <div className="relative w-[160px] h-[56px] lg:hidden">
@@ -29,7 +27,7 @@ export default function Footer() {
             <Link
               key={link.label}
               href={link.href}
-              className="font-work font-semibold text-[#03879e] text-sm uppercase hover:opacity-80 transition-opacity whitespace-nowrap"
+              className="font-work font-semibold text-[#078930] text-sm uppercase hover:opacity-80 transition-opacity whitespace-nowrap"
             >
               {link.label}
             </Link>

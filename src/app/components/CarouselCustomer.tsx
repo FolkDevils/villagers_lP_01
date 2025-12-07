@@ -6,69 +6,61 @@ import Image from "next/image";
 const SLIDES = [
   {
     id: "impact",
-    title: "What impacts one, impacts us all",
+    title: "So much more than shopping.",
     description: (
       <>
         <p className="mb-4">
-        Each purchase triggers a Local Impact Receipt showing how dollars stay local and power jobs and supports a thriving community.
-        </p>
+        there&apos;s a reason you return to your favorite stores. Maybe you love the owner. Maybe you find friends there. Maybe you love the service or the products.   </p>
         <p className="mb-4">
-        your friends, neighbors and customers can see their impact and learn about the power of shopping local.  </p>
-        <p className="mb-4">
-        On your end, you’ll collect verified emails automatically with helpful info.</p>
+        Villagers knows there is nothing more valuable than maintaining a supportive and thriving place for you to go.
+         </p>
         <p className="font-bold">
-        The Local Impact Receipt builds loyalty by illustrating purpose and connection  </p>
+        Your Local Impact Receipt builds real loyalty and connection between you and the places you love. </p>
       </>
     ),
   },
   {
     id: "chart",
-    title: "Know Your Village",
+    title: "It’s your Village.<br /> Be a part of it.",
     description: (
       <>
         <p className="mb-6">
-        Get to know the people who really matter— the 35% who drive 80% of your revenue.
+        you&apos;ll get to know the shops and stores you love — and they’ll get to know you and what you love.
         </p>
         <p>
-        Villagers automatically brings your top customers to the forefront and helps you to keep them coming back, so you can focus where it matters most.
-        </p>
+        Villagers makes you the top priority of their business. you’re as valued as you should be.
+          </p>
       </>
     ),
   },
   {
     id: "engage",
-    title: "Engage & Grow",
+    title: "They thrive, you win.",
     description: (
       <>
         <p className="mb-6 font-medium">
-          Engage effortlessly. Grow together.
+        Villagers AI system does so much for shop Owners. 
         </p>
         <p className="mb-6">
-          Email, SMS, events, and AI insights — all in one place.
+        Email, SMS, events, and AI insights — all in one place.
         </p>
-        <p className="mb-6">
-        Your AI assistant, Alder, enriches customer profiles, drafts messages, and identifies your next best actions automatically. 
-        </p>
-        <p>
-        So you can be on the floor, talking to the people that matter.       
-        </p>
+        <p >
+        these tools allow them to keep in touch with you the very best way, personally and authentically.</p>
+    
       </>
     ),
   },
   {
     id: "value",
-    title: "Create Lasting Value",
+    title: "Be a part of it all.",
     description: (
       <>
         <p className="mb-6 ">
-        Enjoy the journey while growing the business.
+        Nothing feels better than a spirit of belonging.
         </p>
-        <p className="mb-6">
-        Villagers is all about helping you retain your best customers, elevate your regulars, and turn data into true connection points.   
-        </p>
-        <p>
-        Nothing grows your dream like real people and real contact. Villagers is here to support that.
-          </p>
+        <p >
+        Villagers brings communities together. Our shared goal is for the neighborhood you love and live in to thrive and prosper. Together.  </p>
+       
       </>
     ),
   },
@@ -104,7 +96,7 @@ function ChartVisual() {
   );
 }
 
-function ImageVisual({ src = "/block02_image_05.png", priority = false }: { src?: string, priority?: boolean }) {
+function ImageVisual({ src = "/Customer_07.png", priority = false }: { src?: string, priority?: boolean }) {
   return (
     <div className="relative w-full h-full">
       <Image
@@ -161,9 +153,9 @@ export default function Carousel() {
 
   const getImageSrc = (id: string) => {
     switch (id) {
-      case "engage": return "/block02_image_06.png";
-      case "value": return "/block02_image_07.png";
-      default: return "/block02_image_05.png";
+      case "engage": return "/Customer_10.png";
+      case "value": return "/Customer_11.png";
+      default: return "/Customer_07.png";
     }
   };
 

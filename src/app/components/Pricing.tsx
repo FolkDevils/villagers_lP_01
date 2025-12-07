@@ -77,11 +77,11 @@ const PRICING_TIERS = [
 
 export default function Pricing() {
   return (
-    <div className="w-full flex flex-col items-center gap-12 pt-20 pb-8">
-      <h1 className="font-work font-regular text-[#03879e] text-[32px] md:text-[40px] text-center px-4">
+    <div className="w-full flex flex-col items-center gap-8 pt-8 pb-4">
+      <h1 className="font-work font-regular  bg-gradient-to-b from-[#0AC200] to-[#078930] bg-clip-text text-transparent text-[32px] md:text-[40px] text-center px-4">
         Join the Movement. Build Your Village.
       </h1>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 px-4 lg:px-0 max-w-[1440px] mx-auto">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 px-0 lg:px-0 max-w-[1440px] mx-auto">
         {PRICING_TIERS.map((tier, index) => (
           <div
             key={index}
@@ -90,11 +90,11 @@ export default function Pricing() {
             {/* Header */}
             <div className="flex flex-col items-center gap-6 mb-8 w-full">
               <div className="flex flex-col items-center gap-5">
-                <span className="font-work font-medium text-[#03879e] text-sm uppercase text-center tracking-wide">
+                <span className="font-work font-medium  bg-gradient-to-b from-[#0AC200] to-[#078930] bg-clip-text text-transparent text-sm uppercase text-center tracking-wide">
                   {tier.name}
                 </span>
                 
-                <div className="flex flex-col items-center text-[#03879e]">
+                <div className="flex flex-col items-center  bg-gradient-to-b from-[#0AC200] to-[#078930] bg-clip-text text-transparent">
                   <span className="font-work font-light text-[80px] leading-none">
                     ${tier.price}
                   </span>
@@ -108,8 +108,8 @@ export default function Pricing() {
                 </p>
               </div>
 
-              <button className="w-full py-4 px-6 border-[3px] border-[#00d29e] rounded-full text-[#00d29e] font-work font-semibold text-base uppercase hover:bg-[#00d29e] hover:text-white transition-colors">
-                Sign up
+              <button className="w-full border-[3px] mt-0 border-[#0ac200] rounded-full px-6 py-4 text-[#0ac200] font-semibold text-base uppercase hover:bg-[#0ac200] hover:text-white transition-colors cursor-pointer bg-transparent">
+              Sign up
               </button>
             </div>
 

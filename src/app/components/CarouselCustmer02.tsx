@@ -6,54 +6,34 @@ import Image from "next/image";
 interface SlideData {
   id: string;
   quote: string;
-  logoSrc: string;
-  logoAlt: string;
   imageSrc: string;
   imageAlt: string;
-  logoWidth?: number; // Optional custom width
-  logoHeight?: number; // Optional custom height
 }
 
 const SLIDES: SlideData[] = [
   {
     id: "impact-1",
-    quote: "“Villagers helped us connect with the customers who make our shop thrive.”",
-    logoSrc: "/logo_yonderlust.svg",
-    logoAlt: "Yonderlust",
-    imageSrc: "/quote_01b.png",
+    quote: "“Villagers makes sure I'm seen as a real person, not a number”",
+    imageSrc: "/Customer_12.png",
     imageAlt: "Share the Impact",
-    logoWidth: 180, // Default width
-    logoHeight: 50,  // Default height
   },
   {
     id: "impact-2",
-    quote: "“Villagers changed my business in ways I could not have thought possible.”",
-    logoSrc: "/logo_indio.svg",
-    logoAlt: "Indio",
-    imageSrc: "/quote_02.png",
+    quote: "“I shop local because it feels personal. Villagers makes everyday errands feel meaningful.”",
+    imageSrc: "/Customer_13.png",
     imageAlt: "Share the Impact",
-    logoWidth: 110,
-    logoHeight: 50,
   },
   {
     id: "impact-3",
-    quote: "“I was able to connect with my customers like never before ”",
-    logoSrc: "/logo_ascend.svg",
-    logoAlt: "Ascend",
-    imageSrc: "/quote_03.png",
+    quote: "“Being a Villager means belonging. Every shop here feels like part of our circle.”",
+    imageSrc: "/Customer_14.png",
     imageAlt: "Share the Impact",
-    logoWidth: 150,
-    logoHeight: 50,
   },
   {
     id: "impact-4",
-    quote: "“Villagers made connecting with my customers online so easy.”",
-    logoSrc: "/logo_bullseye.svg",
-    logoAlt: "Yonderlust",
-    imageSrc: "/quote_05.png",
+    quote: "“Villagers helps us raise our family in a real community. These stores truly know us.”",
+    imageSrc: "/Customer_15.png",
     imageAlt: "Share the Impact",
-    logoWidth: 100,
-    logoHeight: 110,
   },
 ];
 
@@ -137,21 +117,6 @@ export default function Carousel() {
                       <p className="-indent-[0.4em]  text-[#078930]  text-2xl md:text-3xl leading-tight">
                         {slide.quote}
                       </p>
-                      <div 
-                        className="relative ml-4"
-                        style={{ 
-                          width: slide.logoWidth ? `${slide.logoWidth}px` : '140px',
-                          height: slide.logoHeight ? `${slide.logoHeight}px` : '50px'
-                        }}
-                      >
-                         <Image
-                          src={slide.logoSrc}
-                          alt={slide.logoAlt}
-                          fill
-                          className="object-contain object-left"
-                          priority={index === 0}
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>
