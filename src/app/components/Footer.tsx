@@ -1,48 +1,44 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-const FOOTER_LINKS = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms & Conditions", href: "#" },
-  { label: "Contact", href: "#" },
-];
-
 export default function Footer() {
   return (
-    <footer className="w-full max-w-[1440px] mx-auto px-16 pb-16">
-      <div className="w-full flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 lg:gap-0">
-        {/* Mobile Logo (Top Left) */}
-        <div className="relative w-[160px] h-[56px] lg:hidden">
-          <Image
-            src="/logo_sm.svg"
-            alt="Villagers Logo"
-            fill
-            className="object-contain object-left"
-          />
+    <footer className="w-full bg-[#332E2E] px-6 md:px-12 py-6">
+      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Navigation Links */}
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 pb-3 md:pb-0">
+          <Link
+            href="#"
+            className="text-[#FCFBF5] hover:text-[#FF5C4D] transition-colors font-poppins font-semibold text-sm md:text-lg uppercase"
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            href="#"
+            className="text-[#FCFBF5] hover:text-[#FF5C4D] transition-colors font-poppins font-semibold text-sm md:text-lg uppercase"
+          >
+            Terms & Conditions
+          </Link>
+          <Link
+            href="#"
+            className="text-[#FCFBF5] hover:text-[#FF5C4D] transition-colors font-poppins font-semibold text-sm md:text-lg uppercase"
+          >
+            Contact
+          </Link>
         </div>
 
-        {/* Links */}
-        <nav className="flex flex-col lg:flex-row gap-6 lg:gap-8 pb-[14px]">
-          {FOOTER_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="font-work font-semibold text-[#078930] text-sm uppercase hover:opacity-80 transition-opacity whitespace-nowrap"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Desktop Logo (Bottom Right) */}
-        <div className="relative w-[211px] h-[74px] hidden lg:block">
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
           <Image
-            src="/logo_sm.svg"
-            alt="Villagers Logo"
-            fill
-            className="object-contain object-right-bottom"
+            src="/villagerLogo_new.svg"
+            alt="Villagers"
+            width={171}
+            height={51}
+            className="h-10 md:h-12 w-auto"
           />
-        </div>
+        </Link>
       </div>
     </footer>
   );

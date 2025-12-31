@@ -5,6 +5,7 @@ import Carousel from "../components/Carousel";
 import Carousel02 from "../components/Carousel02";
 import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -56,19 +57,9 @@ export default function Home() {
 
   return (
     // Removed bg-[#dfffde] class here to allow body color to show through
-    <div className="min-h-screen flex flex-col overflow-x-hidden font-work">
-      {/* Header / Logo Section */}
-      <header className="w-full pt-12 px-4 sm:px-8 flex justify-center relative z-20">
-        <div className="relative w-full max-w-[1361px] aspect-[1361/476]">
-           <Image
-            src="/logo_villagers.svg"
-            alt="Villagers Logo"
-            fill
-            className="object-contain object-top"
-            priority
-          />
-        </div>
-      </header>
+    <div className="min-h-screen flex flex-col overflow-x-hidden font-poppins">
+      {/* Navigation Bar */}
+      <NavBar />
 
       {/* Main Content */}
       <main className="flex-1 w-full max-w-[1440px] mx-auto px-8 md:px-28 pb-20 relative z-10 space-y-32">
@@ -77,7 +68,7 @@ export default function Home() {
           
           {/* Left Text Content */}
           <div className="flex flex-col gap-4 max-w-[580px] lg:mt-20 order-2 lg:order-1 lg:col-span-5">
-            <h1 className="h1-responsive text-[#00d29e]">
+            <h1 className="h1-responsive text-[#332E2E]">
               Where loyalty <br />
               get’s personal.
             </h1>
@@ -114,7 +105,7 @@ export default function Home() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-10 pb-20 lg:gap-20 items-end">
            {/* Left Text Content */}
            <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-5">
-            <h1 className="h1-responsive text-[#00d257]">
+            <h1 className="h1-responsive text-[#332E2E]">
               Local Businesses<br /> Have a Superpower
             </h1>
             
@@ -161,7 +152,7 @@ export default function Home() {
 
                 {/* Floating Card */}
                 <div className="bg-[#dfffde] rounded-[16px] p-3 sm:p-6 flex flex-col items-center justify-center shadow-lg z-20 w-[80%] max-w-[200px] relative">
-                  <span className="font-extralight text-[10cqw] lg:text-[60px] xl:text-[80px] leading-none text-[#00d257]">70%</span>
+                  <span className="font-playfair font-semibold text-[10cqw] lg:text-[60px] xl:text-[80px] leading-none text-[#00d257]">70%</span>
                   <span className="text-sm uppercase text-[#5b5959]">growth</span>
                </div>
               </div>

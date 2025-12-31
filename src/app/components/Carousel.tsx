@@ -1,9 +1,30 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import Image from "next/image";
+import DonutChart from "./DonutChart";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SLIDES = [
+  
+  {
+    id: "chart",
+    title: "Know Your Village",
+    description: (
+      <>
+        <p className="mb-6">
+        Get to know the people who really matter— the 35% who drive 80% of your revenue.
+        </p>
+        <p>
+        Villagers automatically brings your top customers to the forefront and helps you to keep them coming back, so you can focus where it matters most.
+        </p>
+      </>
+    ),
+  },
+  
   {
     id: "impact",
     title: "What impacts one, impacts us all",
@@ -21,20 +42,7 @@ const SLIDES = [
       </>
     ),
   },
-  {
-    id: "chart",
-    title: "Know Your Village",
-    description: (
-      <>
-        <p className="mb-6">
-        Get to know the people who really matter— the 35% who drive 80% of your revenue.
-        </p>
-        <p>
-        Villagers automatically brings your top customers to the forefront and helps you to keep them coming back, so you can focus where it matters most.
-        </p>
-      </>
-    ),
-  },
+
   {
     id: "engage",
     title: "Engage & Grow",
@@ -74,33 +82,31 @@ const SLIDES = [
   },
 ];
 
-function ChartVisual() {
+function ChartVisual({ 
+  chartRef,
+  largeCircleRef,
+  smallCircleRef,
+  largeTextRef,
+  smallTextRef 
+}: {
+  chartRef?: React.RefObject<HTMLDivElement | null>;
+  largeCircleRef?: React.RefObject<HTMLDivElement | null>;
+  smallCircleRef?: React.RefObject<HTMLDivElement | null>;
+  largeTextRef?: React.RefObject<HTMLDivElement | null>;
+  smallTextRef?: React.RefObject<HTMLDivElement | null>;
+}) {
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
-      {/* Large Circle (85%) */}
-      <div className="relative w-full aspect-square bg-[#84fcdb] rounded-full">
-        <div className="absolute top-[25%] left-[18%] flex flex-col items-start z-10">
-          <span className="font-extralight text-[88px] md:text-[88px] lg:text-[88px] xl:text-[100px] leading-none text-[#03879e]">
-            85%
-          </span>
-          <span className="text-xs md:text-sm lg:text-sm ] uppercase text-[#5b5959] ml-2 tracking-wide">
-            Total Sales
-          </span>
-        </div>
-
-        {/* Small Circle (35%) */}
-        <div className="absolute bottom-[15%] right-[15%] w-[35%] md:w-[40%] lg:w-[45%] aspect-square bg-[#fbffde] rounded-full flex items-center justify-center z-20">
-          <div className="flex flex-col items-center">
-            <span className="font-extralight text-[52px] md:text-[64px] lg:text-[68px] xl:text-[78px] leading-none text-[#03879e]">
-              35%
-            </span>
-            <span className="text-[10px] md:text-xs lg:text-sm  uppercase text-[#5b5959] tracking-wide">
-              customers
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <DonutChart
+      largePercentage="85%"
+      largeLabel="Total Sales"
+      smallPercentage="35%"
+      smallLabel="customers"
+      chartRef={chartRef}
+      largeCircleRef={largeCircleRef}
+      smallCircleRef={smallCircleRef}
+      largeTextRef={largeTextRef}
+      smallTextRef={smallTextRef}
+    />
   );
 }
 
@@ -123,9 +129,106 @@ export default function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  
+  // Refs for DonutChart animation
+  const donutChartRef = useRef<HTMLDivElement>(null);
+  const largeCircleRef = useRef<HTMLDivElement>(null);
+  const smallCircleRef = useRef<HTMLDivElement>(null);
+  const largeTextRef = useRef<HTMLDivElement>(null);
+  const smallTextRef = useRef<HTMLDivElement>(null);
 
   // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
+  
+  // DonutChart scroll animation
+  useEffect(() => {
+    if (!donutChartRef.current || !largeCircleRef.current || !smallCircleRef.current || !largeTextRef.current || !smallTextRef.current) return;
+    
+    const ctx = gsap.context(() => {
+      // Animate large circle with dramatic scale
+      gsap.fromTo(largeCircleRef.current,
+        {
+          scale: 0.5,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.4,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: donutChartRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+      
+      // Animate large text with stagger
+      gsap.fromTo(largeTextRef.current,
+        {
+          opacity: 0,
+          scale: 0.5,
+          x: -30
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          duration: 1,
+          ease: "back.out(2)",
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: donutChartRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+      
+      // Animate small circle with dramatic scale (staggered after large)
+      gsap.fromTo(smallCircleRef.current,
+        {
+          scale: 0.5,
+          opacity: 0,
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.4,
+          ease: "back.out(1.7)",
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: donutChartRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+      
+      // Animate small text (after small circle)
+      gsap.fromTo(smallTextRef.current,
+        {
+          opacity: 0,
+          scale: 0.5,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(2)",
+          delay: 1.0,
+          scrollTrigger: {
+            trigger: donutChartRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+    
+    return () => ctx.revert();
+  }, []);
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null); // Reset touch end
@@ -188,7 +291,13 @@ export default function Carousel() {
                 <div className={`order-1 lg:order-1 flex-shrink-0 w-full lg:w-auto h-auto lg:h-[600px] flex items-center ${slide.id === "chart" ? "justify-center lg:justify-start" : "justify-center lg:justify-start"}`}>
                   {slide.id === "chart" ? (
                     <div className="relative w-full aspect-square lg:h-full lg:w-[500px] xl:w-[600px]">
-                      <ChartVisual />
+                      <ChartVisual 
+                        chartRef={donutChartRef}
+                        largeCircleRef={largeCircleRef}
+                        smallCircleRef={smallCircleRef}
+                        largeTextRef={largeTextRef}
+                        smallTextRef={smallTextRef}
+                      />
                     </div>
                   ) : (
                     <div className="relative w-full aspect-square lg:h-full  lg:w-[500px] xl:w-[600px] rounded-t-[500px] lg:rounded-t-[500px] rounded-b-[20px] overflow-hidden self-center">
@@ -200,10 +309,10 @@ export default function Carousel() {
                 {/* Text Content Column */}
                 <div className="order-2 lg:order-2 flex-shrink-0 w-full lg:flex-1 mt-4 lg:mt-0 z-10 relative flex flex-col lg:max-w-[580px] pr-4 lg:pr-0">
                   <h1 
-                    className="h1-responsive bg-gradient-to-b from-[#0AC200] pr-0 md:pr-0 to-[#078930] bg-clip-text text-transparent mb-4"
+                    className="h1-responsive text-[#332E2E] pr-0 md:pr-0 mb-4"
                     dangerouslySetInnerHTML={{ __html: slide.title }}
                   />
-                  <div className="p-responsive text-[#5b5959] leading-snug">
+                  <div className="p-responsive text-[#333333] leading-snug">
                     {slide.description}
                   </div>
                 </div>
@@ -214,29 +323,31 @@ export default function Carousel() {
       </div>
 
       {/* Controls */}
-      <div className="mt-4 md:mt-10 w-full border-t border-[#03879e]/20 pt-6 flex gap-4">
+      <div className="mt-4 md:mt-10 w-full border-t border-[#2D2D2D]/20 pt-6 flex gap-2.5">
         <button
           onClick={prevSlide}
-          className="transition-opacity hover:opacity-70 focus:outline-none"
+          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF5C4D] hover:border-[#FF5C4D] focus:outline-none group"
           aria-label="Previous slide"
         >
           <Image
             src="/carousel-arrow-left.svg"
             alt="Previous"
-            width={46}
-            height={46}
+            width={24}
+            height={24}
+            className="group-hover:brightness-0 group-hover:invert transition-all"
           />
         </button>
         <button
           onClick={nextSlide}
-          className="transition-opacity hover:opacity-70 focus:outline-none"
+          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF5C4D] hover:border-[#FF5C4D] focus:outline-none group"
           aria-label="Next slide"
         >
           <Image
             src="/carousel-arrow-right.svg"
             alt="Next"
-            width={46}
-            height={46}
+            width={24}
+            height={24}
+            className="group-hover:brightness-0 group-hover:invert transition-all"
           />
         </button>
       </div>

@@ -112,9 +112,9 @@ export default function Carousel() {
 
                 {/* Text Content Column */}
                 <div className="order-2 lg:order-2 flex-shrink-0 w-full lg:flex-1 mt-4 lg:mt-0 z-10 relative flex flex-col lg:max-w-[580px] lg:pr-0">
-                  <div className="p-responsive text-[#5b5959]">
+                  <div className="p-responsive text-[#333333]">
                     <div className="flex flex-col gap-8">
-                      <p className="-indent-[0.4em]  text-[#078930]  text-2xl md:text-3xl leading-tight">
+                      <p className="-indent-[0.4em] font-playfair font-semibold text-[#2D2D2D] text-2xl md:text-3xl leading-tight">
                         {slide.quote}
                       </p>
                     </div>
@@ -127,29 +127,31 @@ export default function Carousel() {
       </div>
 
       {/* Controls */}
-      <div className="mt-4 md:mt-10 w-full border-t border-[#03879e]/20 pt-6 flex gap-4">
+      <div className="mt-4 md:mt-10 w-full border-t border-[#2D2D2D]/20 pt-6 flex gap-2.5">
         <button
           onClick={prevSlide}
-          className="transition-opacity hover:opacity-70 focus:outline-none"
+          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF5C4D] hover:border-[#FF5C4D] focus:outline-none group"
           aria-label="Previous slide"
         >
           <Image
             src="/carousel-arrow-left.svg"
             alt="Previous"
-            width={46}
-            height={46}
+            width={24}
+            height={24}
+            className="group-hover:brightness-0 group-hover:invert transition-all"
           />
         </button>
         <button
           onClick={nextSlide}
-          className="transition-opacity hover:opacity-70 focus:outline-none"
+          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF5C4D] hover:border-[#FF5C4D] focus:outline-none group"
           aria-label="Next slide"
         >
           <Image
             src="/carousel-arrow-right.svg"
             alt="Next"
-            width={46}
-            height={46}
+            width={24}
+            height={24}
+            className="group-hover:brightness-0 group-hover:invert transition-all"
           />
         </button>
       </div>
