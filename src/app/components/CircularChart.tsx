@@ -14,8 +14,8 @@ export default function CircularChart({ padding = "p-8", chartRef, outerRingRef,
   const innerRingPercentage = 6;
   
   // Ring dimensions
-  const outerRadius = 85;
-  const innerRadius = 70;
+  const outerRadius = 82;
+  const innerRadius = 72;
   
   // Calculate circumferences
   const outerCircumference = 2 * Math.PI * outerRadius;

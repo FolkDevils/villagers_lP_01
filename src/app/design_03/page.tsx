@@ -10,6 +10,7 @@ import CircularChart from "../components/CircularChart";
 import HeroSection from "../components/HeroSection";
 import ContentBlock from "../components/ContentBlock";
 import BarChart from "../components/BarChart";
+import NewsletterSignup from "../components/NewsletterSignup";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -232,7 +233,7 @@ export default function Home() {
 
       {/* Main Content */}
    {/* Main Content */}
-   <main className="flex-1 w-full max-w-[1440px] mx-auto px-8 md:px-28 pb-20 relative z-10 space-y-32">
+   <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20 relative z-10 space-y-32">
         {/* Content Block 01 */}
         <ContentBlock
           sectionRef={section1Ref}
@@ -267,49 +268,8 @@ export default function Home() {
         </section>
         
         {/* Pricing Section */}
-        <section ref={pricingRef} className="w-full md:px-8 mb-20">
-          <div className="bg-white w-full flex flex-col gap-12 items-center justify-center pt-32 px-6 pb-16 md:px-16 relative rounded-b-[40px] rounded-t-[800px]">
-            {/* Header Text */}
-            <div className="flex flex-col gap-8 items-center justify-center text-center w-full max-w-4xl">
-              <p className="font-regular text-3xl md:text-5xl leading-tight text-[#FF5C4D]">
-                Join the Movement. <br />
-                Build Your Village.
-              </p>
-              <p className="text-[#333333] text-sm md:text-base leading-relaxed max-w-xl">
-                Sign up for the Villagers newsletter to stay in the know about what's happening locally, new shops, events, and the people who keep our community thriving.
-              </p>
-            </div>
-
-            {/* Form Fields */}
-            <div className="flex flex-col gap-4 items-end w-full max-w-4xl">
-              <input 
-                type="text" 
-                placeholder="First Name*" 
-                className="w-full bg-[#FEFEF9] rounded-full px-8 py-4 text-[#333333] placeholder-[#333333] text-sm md:text-base border-none outline-none focus:ring-2 focus:ring-[#FF5C4D]/20"
-              />
-              <input 
-                type="text" 
-                placeholder="Last Name" 
-                className="w-full bg-[#FEFEF9] rounded-full px-8 py-4 text-[#333333] placeholder-[#333333] text-sm md:text-base border-none outline-none focus:ring-2 focus:ring-[#FF5C4D]/20"
-              />
-              <input 
-                type="tel" 
-                placeholder="Mobile Phone" 
-                className="w-full bg-[#FEFEF9] rounded-full px-8 py-4 text-[#333333] placeholder-[#333333] text-sm md:text-base border-none outline-none focus:ring-2 focus:ring-[#FF5C4D]/20"
-              />
-              <input 
-                type="email" 
-                placeholder="Email*" 
-                className="w-full bg-[#FEFEF9] rounded-full px-8 py-4 text-[#333333] placeholder-[#333333] text-sm md:text-base border-none outline-none focus:ring-2 focus:ring-[#FF5C4D]/20"
-              />
-              
-              <div className="h-4" />
-              
-              <button className="border-[3px] mt-4 border-[#FF5C4D] rounded-full px-6 py-4 text-[#FF5C4D] font-semibold text-base uppercase hover:bg-[#FF5C4D] hover:text-white transition-colors cursor-pointer bg-transparent">
-                Become a villager
-              </button>
-            </div>
-          </div>
+        <section ref={pricingRef} className="w-full md:px-0 mb-20">
+          <NewsletterSignup />
         </section>
       </main>
 

@@ -178,7 +178,7 @@ export default function Home() {
       />
 
       {/* Main Content */}
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-8 md:px-28 pb-20 relative z-10 space-y-32">
+      <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20 relative z-10 space-y-32">
         {/* Content Block 01 */}
         <ContentBlock
           sectionRef={section1Ref}
