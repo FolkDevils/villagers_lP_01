@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "./components/Button";
 
 export default function Home() {
   return (
@@ -8,18 +8,22 @@ export default function Home() {
       </h1>
       <div className="flex flex-col gap-6">
 
-        <Link
+        <Button
           href="/design_02"
-          className="px-8 py-4 bg-[#FCFBF5] text-[#FF5C4D] font-semibold rounded-full border-2 border-[#FF5C4D] hover:bg-[#FF5C4D] hover:text-[#FCFBF5]  transition-colors text-center min-w-[200px]"
+          variant="secondary"
+          size="medium"
+          className="min-w-[200px]"
         >
          Store Owner Page 
-        </Link>
-        <Link
+        </Button>
+        <Button
           href="/design_03"
-          className="px-8 py-4 bg-[#FCFBF5] text-[#FF5C4D] font-semibold rounded-full border-2 border-[#FF5C4D] hover:bg-[#FF5C4D] hover:text-[#FCFBF5]  transition-colors text-center min-w-[200px]"
+          variant="secondary"
+          size="medium"
+          className="min-w-[200px]"
         >
           Customer Page
-        </Link>
+        </Button>
       </div>
     </div>
   );

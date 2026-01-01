@@ -1,23 +1,66 @@
 import Image from "next/image";
+import Button from "./Button";
 
 interface HeroSectionProps {
   backgroundImage: string;
+  mobileBackgroundImage?: string;
   title: string | React.ReactNode;
   description: string;
   buttonText: string;
+  onButtonClick?: () => void;
+  buttonHref?: string;
 }
 
-export default function HeroSection({ backgroundImage, title, description, buttonText }: HeroSectionProps) {
+export default function HeroSection({ 
+  backgroundImage, 
+  mobileBackgroundImage, 
+  title, 
+  description, 
+  buttonText,
+  onButtonClick,
+  buttonHref
+}: HeroSectionProps) {
+  
+  const handleClick = (e: React.MouseEvent) => {
+    if (onButtonClick) {
+      e.preventDefault();
+      onButtonClick();
+    } else if (buttonHref) {
+      e.preventDefault();
+      const element = document.querySelector(buttonHref);
+      if (element) {
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - 100; // 100px padding from top
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   return (
-    <section className="relative w-full h-[800px] flex items-end">
-      {/* Background Image */}
+    <section className="relative w-full h-[880px] flex items-end">
+      {/* Desktop Background Image */}
       <Image
         src={backgroundImage}
         alt="Hero Background"
         fill
-        className="object-cover object-center"
+        className="object-cover object-center hidden md:block"
         priority
       />
+      
+      {/* Mobile Background Image */}
+      {mobileBackgroundImage && (
+        <Image
+          src={mobileBackgroundImage}
+          alt="Hero Background Mobile"
+          fill
+          className="object-cover object-center block md:hidden"
+          priority
+        />
+      )}
       
       {/* Content Container */}
       <div className="relative z-10 w-full px-10 py-10">
@@ -32,9 +75,13 @@ export default function HeroSection({ backgroundImage, title, description, butto
             </p>
             
             <div>
-              <button className="bg-[#FF4930] hover:bg-[#FF5C4D] transition-colors rounded-full px-10 py-6 text-[#FFECEC] font-semibold text-lg uppercase">
+              <Button 
+                onClick={handleClick}
+                variant="primary"
+                size="medium"
+              >
                 {buttonText}
-              </button>
+              </Button>
             </div>
           </div>
         </div>

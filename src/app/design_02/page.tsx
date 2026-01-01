@@ -9,13 +9,61 @@ import NavBar from "../components/NavBar";
 import CircularChart from "../components/CircularChart";
 import HeroSection from "../components/HeroSection";
 import ContentBlock from "../components/ContentBlock";
-import { useEffect, useRef } from "react";
+import FormPopup from "../components/FormPopup";
+import StickyBottomCTA from "../components/StickyBottomCTA";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [popupContent, setPopupContent] = useState<{
+    title: React.ReactNode;
+    description: React.ReactNode;
+    buttonText: string;
+  }>({
+    title: (
+      <>
+        Join the Movement. <br />
+        Build Your Village.
+      </>
+    ),
+    description: "Sign up for the Villagers newsletter to stay in the know about what's happening locally, new shops, events, and the people who keep our community thriving.",
+    buttonText: "Sign Up Now"
+  });
+
+  const openPopup = (type: 'default' | 'pricing' = 'default') => {
+    if (type === 'pricing') {
+      setPopupContent({
+        title: (
+          <>
+            Let&apos;s Build Your <br />
+            Village Together
+          </>
+        ),
+        description: "Every community is unique, and so is every business. Tell us a bit about yourself, and let's have a conversation about how Villagers can help you grow deeper connections and lasting relationships with the people who matter most.",
+        buttonText: "Start the Conversation"
+      });
+    } else {
+      setPopupContent({
+        title: (
+          <>
+            Join the Movement. <br />
+            Build Your Village.
+          </>
+        ),
+        description: "Sign up for the Villagers newsletter to stay in the know about what's happening locally, new shops, events, and the people who keep our community thriving.",
+        buttonText: "Sign Up Now"
+      });
+    }
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
   // IMPORTANT: We now target the body element for background color changes, not this container.
   // This container will be transparent.
   const section1Ref = useRef<HTMLElement>(null);
@@ -169,12 +217,14 @@ export default function Home() {
       {/* Navigation Bar */}
       <NavBar />
 
-      {/* Hero Section */}
+      {/* Hero Section - extends under nav */}
       <HeroSection
-        backgroundImage="/ownerHero.png"
+        backgroundImage="/ownerHero02a.png"
+        mobileBackgroundImage="/heroOwner_mobile.png"
         title={<>They're not customers.<br />They're Villagers.</>}
         description="Villagers helps local businesses like yours focus on the 35% of the people in your immediate area who drive 80% of your revenue — turning everyday purchases into lasting relationships and measurable growth."
         buttonText="Become a villager"
+        onButtonClick={() => openPopup('default')}
       />
 
       {/* Main Content */}
@@ -208,12 +258,27 @@ export default function Home() {
         </section>
         
         {/* Pricing Section */}
-        <section ref={pricingRef} className="w-full md:px-8 mb-20">
-          <Pricing />
+        <section id="pricing-section" ref={pricingRef} className="w-full  mb-20">
+          <Pricing onLearnMoreClick={() => openPopup('pricing')} />
         </section>
       </main>
 
       <Footer />
+
+      {/* Sticky Bottom CTA */}
+      <StickyBottomCTA 
+        onButtonClick={() => openPopup('default')}
+        hideBeforeElementId="pricing-section"
+      />
+
+      {/* Form Popup */}
+      <FormPopup 
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        title={popupContent.title}
+        description={popupContent.description}
+        buttonText={popupContent.buttonText}
+      />
     </div>
   );
 }

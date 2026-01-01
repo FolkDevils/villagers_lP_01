@@ -45,7 +45,7 @@ export default function BarChart({
             />
             
             {/* Coral Shape Overlay at Bottom */}
-            <div className="green-overlay absolute bottom-0 left-0 right-0 h-[50%] bg-[#FF5C4D] rounded-t-[1000px] z-0" />
+            <div className="green-overlay absolute bottom-0 left-0 right-0 h-[50%] bg-[#FF4930] rounded-t-[1000px] z-0" />
 
             {/* Content - Positioned relative to the bar */}
             <div className="left-bar-text absolute inset-0  flex flex-col items-center justify-end pb-12 z-10">
@@ -79,7 +79,7 @@ export default function BarChart({
           </div>
         
           {/* Circle Content at Bottom */}
-          <div className="chart-circle absolute bottom-8 left-1/2 -translate-x-1/2 w-[85%] aspect-square bg-[#FF5C4D] opacity-70 rounded-full flex flex-col items-center justify-center p-4 z-10 text-center">
+          <div className="chart-circle absolute bottom-8 left-1/2 -translate-x-1/2 w-[85%] aspect-square bg-[#FF4930] opacity-70 rounded-full flex flex-col items-center justify-center p-4 z-10 text-center">
             <div className="chart-circle-text flex flex-col items-center">
               <span className="font-playfair font-semibold text-[60px] md:text-[80px] -mt-6 lg:text-[90px] leading-none text-[#FCFBF5]">
                 {rightBarValue}

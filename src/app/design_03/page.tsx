@@ -11,6 +11,7 @@ import HeroSection from "../components/HeroSection";
 import ContentBlock from "../components/ContentBlock";
 import BarChart from "../components/BarChart";
 import NewsletterSignup from "../components/NewsletterSignup";
+import StickyBottomCTA from "../components/StickyBottomCTA";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -223,12 +224,14 @@ export default function Home() {
       {/* Navigation Bar */}
       <NavBar />
 
-      {/* Hero Section */}
+      {/* Hero Section - extends under nav */}
       <HeroSection
-        backgroundImage="/customerHero.png"
-        title={<>You aren’t a customer,<br />You’re a Villager.</>}
+        backgroundImage="/customerHero08.png"
+        mobileBackgroundImage="/heroCustomer_mobile.png"
+        title={<>You aren't a customer,<br />You're a Villager.</>}
         description="We are people. We are neighbors, friends, and the ones who love our community. Villagers helps the business you love to see you as just far more than just a customer."
         buttonText="Join the Village"
+        buttonHref="#newsletter-signup"
       />
 
       {/* Main Content */}
@@ -241,7 +244,7 @@ export default function Home() {
           description="When you shop in your Village, you'll be shown just how much you helped your community, and not some faceless corporation hundreds of miles away."
           rightComponent={
             <BarChart
-            leftBarImage="/Customer_04.png"
+            leftBarImage="/local.png"
             leftBarPercentage="52%"
             leftBarLabel="Stays Local"
             leftBarDetails={["Of every dollar spent", "(vs. 6% online)"]}
@@ -274,6 +277,12 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      {/* Sticky Bottom CTA */}
+      <StickyBottomCTA 
+        buttonHref="#newsletter-signup"
+        hideBeforeElementId="newsletter-signup"
+      />
     </div>
   );
 }

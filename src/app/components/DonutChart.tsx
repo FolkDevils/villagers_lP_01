@@ -37,7 +37,7 @@ export default function DonutChart({
         </div>
 
         {/* Small Circle (Inner) - Coral */}
-        <div ref={smallCircleRef} className="absolute bottom-[15%] right-[15%] w-[40%] md:w-[42%] lg:w-[42%] aspect-square bg-[#FF5C4D] rounded-full flex items-center justify-center z-20">
+        <div ref={smallCircleRef} className="absolute bottom-[15%] right-[15%] w-[40%] md:w-[42%] lg:w-[42%] aspect-square bg-[#FF4930] rounded-full flex items-center justify-center z-20">
           <div ref={smallTextRef} className="flex flex-col items-center">
             <span className="font-playfair font-light text-[52px] md:text-[88px] lg:text-[100px] xl:text-[80px] leading-none text-[#FFEFEF]">
               {smallPercentage}

@@ -162,10 +162,10 @@ export default function Carousel() {
       </div>
 
       {/* Controls */}
-      <div className="mt-4 md:mt-10 w-full border-t border-[#2D2D2D]/20 pt-6 flex gap-2.5">
+      <div className="mt-4 md:mt-12 w-full border-t border-[#2D2D2D]/20 pt-8 flex gap-2.5">
         <button
           onClick={prevSlide}
-          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF5C4D] hover:border-[#FF5C4D] focus:outline-none group"
+          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF4930] hover:border-[#FF4930] focus:outline-none group"
           aria-label="Previous slide"
         >
           <Image
@@ -178,7 +178,7 @@ export default function Carousel() {
         </button>
         <button
           onClick={nextSlide}
-          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF5C4D] hover:border-[#FF5C4D] focus:outline-none group"
+          className="w-[46px] h-[46px] rounded-full border-2 border-[#332E2E] flex items-center justify-center transition-all hover:bg-[#FF4930] hover:border-[#FF4930] focus:outline-none group"
           aria-label="Next slide"
         >
           <Image

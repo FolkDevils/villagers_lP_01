@@ -11,19 +11,19 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 pb-3 md:pb-0">
           <Link
             href="#"
-            className="text-[#FCFBF5] hover:text-[#FF5C4D] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
+            className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
           >
             Privacy Policy
           </Link>
           <Link
             href="#"
-            className="text-[#FCFBF5] hover:text-[#FF5C4D] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
+            className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
           >
             Terms & Conditions
           </Link>
           <Link
             href="#"
-            className="text-[#FCFBF5] hover:text-[#FF5C4D] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
+            className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
           >
             Contact
           </Link>

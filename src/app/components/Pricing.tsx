@@ -1,6 +1,11 @@
 "use client";
 
 import React from "react";
+import Button from "./Button";
+
+interface PricingProps {
+  onLearnMoreClick?: () => void;
+}
 
 const CheckIcon = () => (
   <svg
@@ -75,13 +80,13 @@ const PRICING_TIERS = [
   },
 ];
 
-export default function Pricing() {
+export default function Pricing({ onLearnMoreClick }: PricingProps) {
   return (
     <div className="w-full flex flex-col items-center gap-8 pt-8 pb-4">
       <h1 className="font-playfair font-bold text-[#332e2e] text-[32px] md:text-[40px] text-center px-4">
         Join the Movement. Build Your Village.
       </h1>
-      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 px-0 lg:px-0 max-w-[1440px] mx-auto">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 px-0 lg:px-0  mx-auto">
         {PRICING_TIERS.map((tier, index) => (
           <div
             key={index}
@@ -89,28 +94,33 @@ export default function Pricing() {
           >
             {/* Header */}
             <div className="flex flex-col items-center gap-6 mb-8 w-full">
-              <div className="flex flex-col items-center gap-5">
+              <div className="flex flex-col items-center gap-1">
                 <span className="font-poppins font-medium text-[#332e2e] text-sm uppercase text-center tracking-wide">
                   {tier.name}
                 </span>
                 
                 <div className="flex flex-col items-center text-[#332e2e]">
-                  <span className="font-playfair font-semibold text-[80px] leading-none">
+                  <span className="font-playfair font-semibold text-[80px] mb-3 leading-none">
                     ${tier.price}
                   </span>
-                  <span className="font-poppins font-medium text-lg">
+                  <span className="font-poppins font-medium text-sm">
                     {tier.period}
                   </span>
                 </div>
 
-                <p className="font-poppins font-semibold text-[#332e2e] text-sm text-center min-h-[48px]">
+                <p className="font-poppins font-medium text-[#332e2e] mt-2 text-xs text-center min-h-[48px]">
                   {tier.description}
                 </p>
               </div>
 
-              <button className="w-full border-[3px] mt-0 border-[#332e2e] rounded-full px-6 py-4 text-[#332e2e] font-semibold text-base uppercase hover:bg-[#FF5C4D] hover:text-[#FCFBF5] hover:border-[#FF5C4D] transition-colors cursor-pointer bg-transparent">
-              Learn More
-              </button>
+              <Button 
+                onClick={onLearnMoreClick}
+                variant="outline"
+                size="medium"
+                className="w-full mt-0"
+              >
+                Learn More
+              </Button>
             </div>
 
             {/* Features */}
