@@ -48,11 +48,11 @@ export default function BarChart({
             <div className="green-overlay absolute bottom-0 left-0 right-0 h-[50%] bg-[#FF4930] rounded-t-[1000px] z-0" />
 
             {/* Content - Positioned relative to the bar */}
-            <div className="left-bar-text absolute inset-0  flex flex-col items-center justify-end pb-12 z-10">
-              <span className="font-playfair font-semibold text-[50px] md:text-[60px] lg:text-[80px]   leading-none text-[#FCFBF5]">
+            <div className="left-bar-text absolute inset-0  flex flex-col items-center justify-end pb-4 md:pb-12 z-10">
+              <span className="font-playfair font-semibold text-[40px] md:text-[60px] lg:text-[65px]   leading-none text-[#FCFBF5]">
                 {leftBarPercentage}
               </span>
-              <span className="text-sm md:text-base uppercase text-[#FCFBF5] font-medium mt-2">
+              <span className="text-xs md:text-base uppercase text-[#FCFBF5] font-medium mt-2 lg:mt-2">
                 {leftBarLabel}
               </span>
               {leftBarDetails && leftBarDetails.length > 0 && (
@@ -84,7 +84,7 @@ export default function BarChart({
               <span className="font-playfair font-semibold text-[60px] md:text-[80px] -mt-6 lg:text-[90px] leading-none text-[#FCFBF5]">
                 {rightBarValue}
               </span>
-              <span className="text-xs md:text-sm uppercase text-[#FCFBF5] font-medium mt-6 leading-tight">
+              <span className="text-xs md:text-sm uppercase text-[#FCFBF5] font-medium mt-4 md:mt-4 leading-tight">
                 {rightBarLabel.split(' ').map((word, index, arr) => (
                   index < arr.length - 1 ? <span key={index}>{word} <br/></span> : word
                 ))}

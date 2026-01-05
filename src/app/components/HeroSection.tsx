@@ -41,7 +41,7 @@ export default function HeroSection({
   };
 
   return (
-    <section className="relative w-full h-[880px] flex items-end">
+    <section className="relative w-full h-[750px] md:h-[880px] flex items-end">
       {/* Desktop Background Image */}
       <Image
         src={backgroundImage}
@@ -63,10 +63,10 @@ export default function HeroSection({
       )}
       
       {/* Content Container */}
-      <div className="relative z-10 w-full px-10 py-10">
+      <div className="relative z-10 w-full px-8 md:px-10 py-10">
         <div className="bg-[rgba(0,0,0,0.7)] rounded-xl px-8 md:px-10 py-8 md:py-8 max-w-[822px]">
           <div className="flex flex-col gap-6 md:gap-6">
-            <h1 className="font-playfair font-medium text-[#FDF0DA] text-3xl md:text-[40px] leading-tight">
+            <h1 className="font-playfair font-medium text-[#FDF0DA] text-2xl md:text-[40px] leading-tight">
               {title}
             </h1>
             
@@ -79,6 +79,7 @@ export default function HeroSection({
                 onClick={handleClick}
                 variant="primary"
                 size="medium"
+                className="w-full md:w-auto"
               >
                 {buttonText}
               </Button>

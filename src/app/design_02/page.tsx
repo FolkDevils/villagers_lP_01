@@ -228,25 +228,53 @@ export default function Home() {
       />
 
       {/* Main Content */}
-      <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20 relative z-10 space-y-32">
-        {/* Content Block 01 */}
-        <ContentBlock
-          sectionRef={section1Ref}
-          title="Every purchase they make tells a story of community Impact."
-          description="When a customer see how much of each purchase stays local, supports jobs, and strengthens public services, they come back, not just to shop, but to belong."
-          rightComponent={
-            <div className="relative w-full aspect-square mx-auto">
-              <CircularChart 
-                chartRef={circularChartRef}
-                outerRingRef={outerRingRef}
-                innerRingRef={innerRingRef}
-                outerBgRef={outerBgRef}
-                innerBgRef={innerBgRef}
-                contentRef={chartContentRef}
-              />
+      <main className="flex-1 w-full max-w-[1600px] mx-auto pb-20 relative z-10">
+        {/* ========================================
+            CIRCULAR CHART SECTION - FULL CONTROL
+            ========================================
+            EASY SIZE CONTROLS:
+            - Mobile: Change max-w-[500px] to your desired mobile size
+            - Desktop: Change md:max-w-[600px] to your desired desktop size
+            - Always centered and responsive
+        ======================================== */}
+        <section ref={section1Ref} className="w-full px-8 md:px-28 pt-20 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            
+            {/* Left: Text Content */}
+            <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-5">
+              <h1 className="h1-responsive text-[#332E2E]">
+                Every purchase they make tells a story of community Impact.
+              </h1>
+              <div className="p-responsive text-[#333333] space-y-6 leading-snug">
+                <p>When a customer see how much of each purchase stays local, supports jobs, and strengthens public services, they come back, not just to shop, but to belong.</p>
+              </div>
             </div>
-          }
-        />
+
+            {/* Right: Chart with Full Size Control */}
+            <div className="order-1 lg:order-2 lg:col-span-7 flex justify-center items-center">
+              {/* 
+                CHART SIZE CONTROL - EDIT THESE VALUES:
+                Mobile: max-w-[500px] (default 500px - increase for bigger)
+                Desktop: md:max-w-[600px] (default 600px - increase for bigger)
+              */}
+              <div className="w-full max-w-[500px] md:max-w-[600px] aspect-square">
+                <CircularChart 
+                  padding="p-0"
+                  chartRef={circularChartRef}
+                  outerRingRef={outerRingRef}
+                  innerRingRef={innerRingRef}
+                  outerBgRef={outerBgRef}
+                  innerBgRef={innerBgRef}
+                  contentRef={chartContentRef}
+                />
+              </div>
+            </div>
+            
+          </div>
+        </section>
+
+        {/* Remaining Content Sections */}
+        <div className="px-8 md:px-28 space-y-32">
 
 
         {/* Carousel Section */}
@@ -261,6 +289,7 @@ export default function Home() {
         <section id="pricing-section" ref={pricingRef} className="w-full  mb-20">
           <Pricing onLearnMoreClick={() => openPopup('pricing')} />
         </section>
+        </div>
       </main>
 
       <Footer />

@@ -27,11 +27,11 @@ export default function DonutChart({
     <div ref={chartRef} className="relative w-full h-full flex items-center justify-center">
       {/* Large Circle (Outer) - Beige */}
       <div ref={largeCircleRef} className="relative w-full aspect-square bg-[#FDF0DA] rounded-full">
-        <div ref={largeTextRef} className="absolute top-[25%] left-[18%] flex flex-col items-start z-10">
-          <span className="font-playfair font-light text-[88px] md:text-[80px] lg:text-[80px] xl:text-[90px] leading-none text-[#332E2E]">
+        <div ref={largeTextRef} className="absolute top-[18%] md:top-[25%] left-[18%] flex flex-col items-start z-10">
+          <span className="font-playfair font-light text-[70px] md:text-[80px] lg:text-[80px] xl:text-[90px] leading-none text-[#332E2E]">
             {largePercentage}
           </span>
-          <span className="text-base md:text-lg lg:text-[18px] uppercase text-[#332E2E] ml-2 tracking-wide mt-4 font-poppins">
+          <span className="text-xs md:text-lg lg:text-[18px] uppercase text-[#332E2E] ml-2 md:ml-2 tracking-wide mt-4 font-poppins">
             {largeLabel}
           </span>
         </div>
@@ -42,7 +42,7 @@ export default function DonutChart({
             <span className="font-playfair font-light text-[52px] md:text-[88px] lg:text-[100px] xl:text-[80px] leading-none text-[#FFEFEF]">
               {smallPercentage}
             </span>
-            <span className="text-base md:text-lg lg:text-[18px] mt-2 uppercase text-[#FFEFEF] tracking-wide font-poppins">
+            <span className="text-xs md:text-lg lg:text-[18px] mt-2 uppercase text-[#FFEFEF] tracking-wide font-poppins">
               {smallLabel}
             </span>
           </div>

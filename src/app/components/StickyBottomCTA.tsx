@@ -91,6 +91,7 @@ export default function StickyBottomCTA({
           onClick={handleClick}
           variant="primary"
           size="medium"
+          className="w-full md:w-auto"
         >
           Become a villager
         </Button>
