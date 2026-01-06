@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Carousel from "../components/CarouselCustomer";
-import Carousel02 from "../components/CarouselCustmer02";
+import UniversalCarousel, { CarouselSlide } from "../components/UniversalCarousel";
 import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
@@ -17,6 +16,112 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Carousel 1: Customer features with chart
+const CUSTOMER_SLIDES: CarouselSlide[] = [
+  {
+    id: "chart",
+    type: "chart",
+    title: "It's your Village.<br /> Be a part of it.",
+    description: (
+      <>
+        <p className="mb-6">
+          you'll get to know the shops and stores you love — and they'll get to know you and what you love.
+        </p>
+        <p>
+          Villagers makes you the top priority of their business. you're as valued as you should be.
+        </p>
+      </>
+    ),
+    chartConfig: {
+      largePercentage: "85%",
+      largeLabel: "Total Sales",
+      smallPercentage: "35%",
+      smallLabel: "customers",
+    },
+  },
+  {
+    id: "impact",
+    type: "image",
+    imageSrc: "/Customer_07.png",
+    imageAlt: "Community Impact",
+    title: "So much more than shopping.",
+    description: (
+      <>
+        <p className="mb-4">
+          there's a reason you return to your favorite stores. Maybe you love the owner. Maybe you find friends there. Maybe you love the service or the products.
+        </p>
+        <p className="mb-4">
+          Villagers knows there is nothing more valuable than maintaining a supportive and thriving place for you to go.
+        </p>
+        <p className="font-bold">
+          Your Local Impact Receipt builds real loyalty and connection between you and the places you love.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "engage",
+    type: "image",
+    imageSrc: "/Customer_10.png",
+    imageAlt: "Thrive Together",
+    title: "They thrive, you win.",
+    description: (
+      <>
+        <p className="mb-6 font-medium">Villagers AI system does so much for shop Owners.</p>
+        <p className="mb-6">Email, SMS, events, and AI insights — all in one place.</p>
+        <p>these tools allow them to keep in touch with you the very best way, personally and authentically.</p>
+      </>
+    ),
+  },
+  {
+    id: "value",
+    type: "image",
+    imageSrc: "/Customer_11.png",
+    imageAlt: "Belong",
+    title: "Be a part of it all.",
+    description: (
+      <>
+        <p className="mb-6">Nothing feels better than a spirit of belonging.</p>
+        <p>
+          Villagers brings communities together. Our shared goal is for the neighborhood you love and live in to thrive and prosper. Together.
+        </p>
+      </>
+    ),
+  },
+];
+
+// Carousel 2: Customer quotes
+const CUSTOMER_QUOTE_SLIDES: CarouselSlide[] = [
+  {
+    id: "quote-1",
+    type: "quote",
+    quote: "\u201CVillagers makes sure I\u2019m seen as a real person, not a number\u201D",
+    imageSrc: "/Customer_12.png",
+    imageAlt: "Customer testimonial",
+  },
+  {
+    id: "quote-2",
+    type: "quote",
+    quote: "\u201CI shop local because it feels personal. Villagers makes everyday errands feel meaningful.\u201D",
+    imageSrc: "/Customer_13.png",
+    imageAlt: "Customer testimonial",
+  },
+  {
+    id: "quote-3",
+    type: "quote",
+    quote: "\u201CBeing a Villager means belonging. Every shop here feels like part of our circle.\u201D",
+    imageSrc: "/Customer_14.png",
+    imageAlt: "Customer testimonial",
+  },
+  {
+    id: "quote-4",
+    type: "quote",
+    quote: "\u201CVillagers helps us raise our family in a real community. These stores truly know us.\u201D",
+    imageSrc: "/Customer_15.png",
+    imageAlt: "Customer testimonial",
+  },
+];
 
 export default function Home() {
   const section1Ref = useRef<HTMLElement>(null);
@@ -263,11 +368,11 @@ export default function Home() {
 
         {/* Carousel Section */}
         <section ref={section2Ref} className="w-full">
-          <Carousel />
+          <UniversalCarousel slides={CUSTOMER_SLIDES} />
         </section>
         
         <section className="w-full">
-          <Carousel02 />
+          <UniversalCarousel slides={CUSTOMER_QUOTE_SLIDES} />
         </section>
         
         {/* Pricing Section */}

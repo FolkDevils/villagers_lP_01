@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Carousel from "../components/Carousel";
-import Carousel02 from "../components/Carousel02";
+import UniversalCarousel, { CarouselSlide } from "../components/UniversalCarousel";
 import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
@@ -16,6 +15,135 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
+
+// Carousel 1: Owner features with chart
+const OWNER_SLIDES: CarouselSlide[] = [
+  {
+    id: "chart",
+    type: "chart",
+    title: "Know Your Village",
+    description: (
+      <>
+        <p className="mb-6">
+          Get to know the people who really matter— the 35% who drive 80% of your revenue.
+        </p>
+        <p>
+          Villagers automatically brings your top customers to the forefront and helps you to keep them coming back, so you can focus where it matters most.
+        </p>
+      </>
+    ),
+    chartConfig: {
+      largePercentage: "85%",
+      largeLabel: "Total Sales",
+      smallPercentage: "35%",
+      smallLabel: "customers",
+    },
+  },
+  {
+    id: "impact",
+    type: "image",
+    imageSrc: "/block02_image_05.png",
+    imageAlt: "Local Impact",
+    title: "What impacts one, impacts us all",
+    description: (
+      <>
+        <p className="mb-4">
+          Each purchase triggers a Local Impact Receipt showing how dollars stay local and power jobs and supports a thriving community.
+        </p>
+        <p className="mb-4">
+          your friends, neighbors and customers can see their impact and learn about the power of shopping local.
+        </p>
+        <p className="mb-4">
+          On your end, you'll collect verified emails automatically with helpful info.
+        </p>
+        <p className="font-bold">
+          The Local Impact Receipt builds loyalty by illustrating purpose and connection
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "engage",
+    type: "image",
+    imageSrc: "/block02_image_06.png",
+    imageAlt: "Engage & Grow",
+    title: "Engage & Grow",
+    description: (
+      <>
+        <p className="mb-6 font-medium">Engage effortlessly. Grow together.</p>
+        <p className="mb-6">Email, SMS, events, and AI insights — all in one place.</p>
+        <p className="mb-6">
+          Your AI assistant, Alder, enriches customer profiles, drafts messages, and identifies your next best actions automatically.
+        </p>
+        <p>So you can be on the floor, talking to the people that matter.</p>
+      </>
+    ),
+  },
+  {
+    id: "value",
+    type: "image",
+    imageSrc: "/block02_image_07.png",
+    imageAlt: "Create Value",
+    title: "Create Lasting Value",
+    description: (
+      <>
+        <p className="mb-6">Enjoy the journey while growing the business.</p>
+        <p className="mb-6">
+          Villagers is all about helping you retain your best customers, elevate your regulars, and turn data into true connection points.
+        </p>
+        <p>Nothing grows your dream like real people and real contact. Villagers is here to support that.</p>
+      </>
+    ),
+  },
+];
+
+// Carousel 2: Owner quotes with logos
+const OWNER_QUOTE_SLIDES: CarouselSlide[] = [
+  {
+    id: "quote-1",
+    type: "quote-with-logo",
+    quote: "\u201CVillagers helped us connect with the customers who make our shop thrive.\u201D",
+    logoSrc: "/logo_yonderlust.svg",
+    logoAlt: "Yonderlust",
+    imageSrc: "/quote_01b.png",
+    imageAlt: "Customer testimonial",
+    logoWidth: 180,
+    logoHeight: 50,
+  },
+  {
+    id: "quote-2",
+    type: "quote-with-logo",
+    quote: "\u201CVillagers changed my business in ways I could not have thought possible.\u201D",
+    logoSrc: "/logo_indio.svg",
+    logoAlt: "Indio",
+    imageSrc: "/quote_02.png",
+    imageAlt: "Customer testimonial",
+    logoWidth: 110,
+    logoHeight: 50,
+  },
+  {
+    id: "quote-3",
+    type: "quote-with-logo",
+    quote: "\u201CI was able to connect with my customers like never before \u201D",
+    logoSrc: "/logo_ascend.svg",
+    logoAlt: "Ascend",
+    imageSrc: "/quote_03.png",
+    imageAlt: "Customer testimonial",
+    logoWidth: 150,
+    logoHeight: 50,
+  },
+  {
+    id: "quote-4",
+    type: "quote-with-logo",
+    quote: "\u201CVillagers made connecting with my customers online so easy.\u201D",
+    logoSrc: "/logo_bullseye.svg",
+    logoAlt: "Bullseye",
+    imageSrc: "/quote_05.png",
+    imageAlt: "Customer testimonial",
+    logoWidth: 100,
+    logoHeight: 110,
+  },
+];
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -279,10 +407,10 @@ export default function Home() {
 
         {/* Carousel Section */}
         <section ref={section2Ref} className="w-full">
-          <Carousel />
+          <UniversalCarousel slides={OWNER_SLIDES} />
         </section>  
         <section className="w-full">
-          <Carousel02 />
+          <UniversalCarousel slides={OWNER_QUOTE_SLIDES} />
         </section>
         
         {/* Pricing Section */}
