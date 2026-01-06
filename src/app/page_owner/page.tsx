@@ -10,6 +10,7 @@ import HeroSection from "../components/HeroSection";
 import ContentBlock from "../components/ContentBlock";
 import FormPopup from "../components/FormPopup";
 import StickyBottomCTA from "../components/StickyBottomCTA";
+import NewsletterSignup from "../components/NewsletterSignup";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -419,6 +420,11 @@ export default function Home() {
         </section>
         </div>
       </main>
+
+      {/* Newsletter Signup Section */}
+      <section id="newsletter-signup" className="w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20">
+        <NewsletterSignup />
+      </section>
 
       <Footer />
 

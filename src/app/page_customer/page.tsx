@@ -2,16 +2,15 @@
 
 import Image from "next/image";
 import UniversalCarousel, { CarouselSlide } from "../components/UniversalCarousel";
-import Pricing from "../components/Pricing";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import CircularChart from "../components/CircularChart";
 import HeroSection from "../components/HeroSection";
 import ContentBlock from "../components/ContentBlock";
 import BarChart from "../components/BarChart";
-import NewsletterSignup from "../components/NewsletterSignup";
 import StickyBottomCTA from "../components/StickyBottomCTA";
-import { useEffect, useRef } from "react";
+import FormPopup from "../components/FormPopup";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -124,10 +123,18 @@ const CUSTOMER_QUOTE_SLIDES: CarouselSlide[] = [
 ];
 
 export default function Home() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const section1Ref = useRef<HTMLElement>(null);
   const section2Ref = useRef<HTMLElement>(null);
-  const pricingRef = useRef<HTMLElement>(null);
   const footerRef = useRef<HTMLElement>(null);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
   
   // Refs for second section animation
   const section2ContentRef = useRef<HTMLDivElement>(null);
@@ -336,7 +343,7 @@ export default function Home() {
         title={<>You aren't a customer,<br />You're a Villager.</>}
         description="We are people. We are neighbors, friends, and the ones who love our community. Villagers helps the business you love to see you as just far more than just a customer."
         buttonText="Join the Village"
-        buttonHref="#newsletter-signup"
+        onButtonClick={openPopup}
       />
 
       {/* Main Content */}
@@ -374,19 +381,27 @@ export default function Home() {
         <section className="w-full">
           <UniversalCarousel slides={CUSTOMER_QUOTE_SLIDES} />
         </section>
-        
-        {/* Pricing Section */}
-        <section ref={pricingRef} className="w-full md:px-0 mb-20">
-          <NewsletterSignup />
-        </section>
       </main>
 
       <Footer />
 
       {/* Sticky Bottom CTA */}
       <StickyBottomCTA 
-        buttonHref="#newsletter-signup"
-        hideBeforeElementId="newsletter-signup"
+        onButtonClick={openPopup}
+      />
+
+      {/* Form Popup */}
+      <FormPopup 
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        title={
+          <>
+            Join the Village.<br />
+            Be a part of it.
+          </>
+        }
+        description="Sign up to stay connected with the local shops and businesses you love. Get updates on events, special offers, and community news."
+        buttonText="Join Now"
       />
     </div>
   );

@@ -40,6 +40,15 @@ export default function StickyBottomCTA({
         }
       }
 
+      // Check if near bottom of page (within 300px of bottom)
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrolledToBottom = scrollY + windowHeight >= documentHeight - 300;
+      
+      if (scrolledToBottom) {
+        shouldHide = true;
+      }
+
       const shouldBeVisible = shouldShow && !shouldHide;
 
       // Handle visibility state changes

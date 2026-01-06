@@ -9,7 +9,7 @@ export default function Home() {
       <div className="flex flex-col gap-6">
 
         <Button
-          href="/design_02"
+          href="/page_owner"
           variant="secondary"
           size="medium"
           className="min-w-[200px]"
@@ -17,7 +17,7 @@ export default function Home() {
          Store Owner Page 
         </Button>
         <Button
-          href="/design_03"
+          href="/page_customer"
           variant="secondary"
           size="medium"
           className="min-w-[200px]"
