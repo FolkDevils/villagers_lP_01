@@ -356,8 +356,8 @@ export default function Home() {
         onButtonClick={() => openPopup('default')}
       />
 
-      {/* Main Content */}
-      <main className="flex-1 w-full max-w-[1600px] mx-auto pb-20 relative z-10">
+      {/* Main Content - Circular Chart Section */}
+      <main className="flex-1 w-full max-w-[1600px] mx-auto relative z-10">
         {/* ========================================
             CIRCULAR CHART SECTION - FULL CONTROL
             ========================================
@@ -401,30 +401,28 @@ export default function Home() {
             
           </div>
         </section>
-
-        {/* Remaining Content Sections */}
-        <div className="px-8 md:px-28 space-y-32">
-
-
-        {/* Carousel Section */}
-        <section ref={section2Ref} className="w-full">
-          <UniversalCarousel slides={OWNER_SLIDES} />
-        </section>  
-        <section className="w-full">
-          <UniversalCarousel slides={OWNER_QUOTE_SLIDES} />
-        </section>
-        
-        {/* Pricing Section */}
-        <section id="pricing-section" ref={pricingRef} className="w-full  mb-20">
-          <Pricing onLearnMoreClick={() => openPopup('pricing')} />
-        </section>
-        </div>
       </main>
 
-      {/* Newsletter Signup Section */}
-      <section id="newsletter-signup" className="w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20">
-        <NewsletterSignup />
+      {/* Carousel Sections - Full Viewport Width */}
+      <section ref={section2Ref} className="w-full py-16">
+        <UniversalCarousel slides={OWNER_SLIDES} />
+      </section>  
+      <section className="w-full py-16">
+        <UniversalCarousel slides={OWNER_QUOTE_SLIDES} />
       </section>
+
+      {/* Bottom Content Sections */}
+      <div className="w-full max-w-[1600px] mx-auto px-8 md:px-28 space-y-32 pb-20">
+        {/* Pricing Section */}
+        <section id="pricing-section" ref={pricingRef} className="w-full">
+          <Pricing onLearnMoreClick={() => openPopup('pricing')} />
+        </section>
+
+        {/* Newsletter Signup Section */}
+        <section id="newsletter-signup" className="w-full">
+          <NewsletterSignup />
+        </section>
+      </div>
 
       <Footer />
 

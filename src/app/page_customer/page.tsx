@@ -346,9 +346,8 @@ export default function Home() {
         onButtonClick={openPopup}
       />
 
-      {/* Main Content */}
-   {/* Main Content */}
-   <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20 relative z-10 space-y-32">
+      {/* Main Content - Bar Chart Section */}
+      <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20 relative z-10">
         {/* Content Block 01 */}
         <ContentBlock
           sectionRef={section1Ref}
@@ -369,19 +368,16 @@ export default function Home() {
           />
           }
         />
-
-      
-
-
-        {/* Carousel Section */}
-        <section ref={section2Ref} className="w-full">
-          <UniversalCarousel slides={CUSTOMER_SLIDES} />
-        </section>
-        
-        <section className="w-full">
-          <UniversalCarousel slides={CUSTOMER_QUOTE_SLIDES} />
-        </section>
       </main>
+
+      {/* Carousel Sections - Full Viewport Width */}
+      <section ref={section2Ref} className="w-full py-16">
+        <UniversalCarousel slides={CUSTOMER_SLIDES} />
+      </section>
+      
+      <section className="w-full py-16">
+        <UniversalCarousel slides={CUSTOMER_QUOTE_SLIDES} />
+      </section>
 
       <Footer />
 

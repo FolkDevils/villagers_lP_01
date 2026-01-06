@@ -285,12 +285,12 @@ export default function UniversalCarousel({
 
   return (
     <div
-      className="relative w-screen -mx-8 md:-mx-28"
+      className="relative w-full"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Slider Track - FULL VIEWPORT WIDTH */}
+      {/* Slider Track - FULL WIDTH */}
       <div className="w-full overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out will-change-transform"
@@ -298,7 +298,7 @@ export default function UniversalCarousel({
         >
           {slides.map((slide, index) => (
             <div key={slide.id} className="w-full flex-shrink-0 min-w-full">
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 w-full px-20 lg:px-28 py-8">
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 w-full max-w-[1600px] mx-auto px-8 md:px-28 py-8">
                 {/* Visual Content Column - FILL SPACE */}
                 <div className="order-1 lg:order-1 w-full lg:flex-1 flex items-center justify-center lg:justify-end lg:pr-6">
                   {renderVisual(slide, index)}
