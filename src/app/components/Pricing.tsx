@@ -84,7 +84,7 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
   return (
     <div className="w-full flex flex-col items-center gap-8 pt-8 pb-4">
       <h1 className="font-playfair font-bold text-[#332e2e] text-[32px] md:text-[40px] text-center px-4">
-        Join the Movement. Build Your Village.
+        Three Ways To Build Your Village.
       </h1>
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 px-0 lg:px-0  mx-auto">
         {PRICING_TIERS.map((tier, index) => (
