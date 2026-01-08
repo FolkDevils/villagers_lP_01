@@ -68,8 +68,8 @@ export default function FormPopup({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted');
+    // TODO: Implement form submission logic
+    // This should be connected to your backend API or email service
     handleClose();
   };
 

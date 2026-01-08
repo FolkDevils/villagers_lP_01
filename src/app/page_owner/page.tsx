@@ -180,8 +180,7 @@ export default function Home() {
   const closePopup = () => {
     setIsPopupOpen(false);
   };
-  // IMPORTANT: We now target the body element for background color changes, not this container.
-  // This container will be transparent.
+
   const section1Ref = useRef<HTMLElement>(null);
   const section2Ref = useRef<HTMLElement>(null);
   const pricingRef = useRef<HTMLElement>(null);
@@ -197,12 +196,8 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // --- 1. Set Initial Body Color ---
       gsap.set("body", { backgroundColor: "#FCFBF5" });
 
-      // --- 2. Scroll-Linked Color Interpolation (Scrubbing based on full page scroll) ---
-      // We create a single timeline that spans the entire scrollable height of the page.
-      
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "body",
@@ -212,20 +207,8 @@ export default function Home() {
         }
       });
 
-      // Define the color stops relative to the total scroll progress (0 to 1)
-      // You can adjust the 'position' parameter (the 0.2, 0.45 etc) to control exactly when the color changes.
-      
-      // 0% - 20%: Start Color (#FCFBF5)
-      
-      // 20% - 45%: Transition to lighter cream
       tl.to("body", { backgroundColor: "#FEFEF9", duration: 0.5 }, 0.3);
-      
-      // 45% - 70%: Hold Middle Color
-      
-      // 70% - 90%: Transition to End Color (lighter cream)
       tl.to("body", { backgroundColor: "#FFFFFE", duration: 0.4 }, .95);
-
-      // --- CircularChart Animation ---
       if (circularChartRef.current && outerRingRef.current && innerRingRef.current && outerBgRef.current && innerBgRef.current && chartContentRef.current) {
         // Get the computed strokeDashoffset values (the target values)
         const outerFinalOffset = outerRingRef.current.getAttribute('stroke-dashoffset') || '0';
@@ -252,7 +235,6 @@ export default function Home() {
           }
         );
         
-        // Animate outer ring stroke drawing
         gsap.fromTo(outerRingRef.current,
           { strokeDashoffset: circumference },
           {
@@ -267,7 +249,6 @@ export default function Home() {
           }
         );
         
-        // Animate INNER RING GROUP (background + overlay) together with dramatic scale (staggered)
         gsap.fromTo([innerBgRef.current, innerRingRef.current],
           { 
             scale: 0.5,
@@ -279,7 +260,7 @@ export default function Home() {
             opacity: 1,
             duration: 1.4,
             ease: "back.out(1.7)",
-            delay: 0.5, // Stagger after outer ring
+            delay: 0.5,
             scrollTrigger: {
               trigger: circularChartRef.current,
               start: "top 80%",
@@ -288,7 +269,6 @@ export default function Home() {
           }
         );
         
-        // Animate inner ring stroke drawing
         gsap.fromTo(innerRingRef.current,
           { strokeDashoffset: circumference },
           {
@@ -304,7 +284,6 @@ export default function Home() {
           }
         );
         
-        // Fade in and scale up the content text (after both rings)
         gsap.fromTo(chartContentRef.current,
           { opacity: 0, scale: 0.5 },
           {
@@ -312,7 +291,7 @@ export default function Home() {
             scale: 1,
             duration: 1,
             ease: "back.out(2)",
-            delay: 1.2, // Stagger after inner ring
+            delay: 1.2,
             scrollTrigger: {
               trigger: circularChartRef.current,
               start: "top 80%",
@@ -328,12 +307,9 @@ export default function Home() {
   }, []);
 
   return (
-    // Removed bg-[#dfffde] class here to allow body color to show through
     <div className="min-h-screen flex flex-col overflow-x-hidden font-poppins">
-      {/* Navigation Bar */}
       <NavBar />
 
-      {/* Hero Section - extends under nav */}
       <HeroSection
         backgroundImage="/ownerHero02a.png"
         mobileBackgroundImage="/heroOwner_mobile.png"
@@ -343,20 +319,9 @@ export default function Home() {
         onButtonClick={() => openPopup('default')}
       />
 
-      {/* Main Content - Circular Chart Section */}
       <main className="flex-1 w-full max-w-[1600px] mx-auto relative z-10">
-        {/* ========================================
-            CIRCULAR CHART SECTION - FULL CONTROL
-            ========================================
-            EASY SIZE CONTROLS:
-            - Mobile: Change max-w-[500px] to your desired mobile size
-            - Desktop: Change md:max-w-[600px] to your desired desktop size
-            - Always centered and responsive
-        ======================================== */}
         <section ref={section1Ref} className="w-full px-8 md:px-28 pt-20 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            
-            {/* Left: Text Content */}
             <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-5">
               <h1 className="h1-responsive text-[#332E2E]">
                 Every purchase they make tells a story of community Impact.
@@ -366,13 +331,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Chart with Full Size Control */}
             <div className="order-1 lg:order-2 lg:col-span-7 flex justify-center items-center">
-              {/* 
-                CHART SIZE CONTROL - EDIT THESE VALUES:
-                Mobile: max-w-[500px] (default 500px - increase for bigger)
-                Desktop: md:max-w-[600px] (default 600px - increase for bigger)
-              */}
               <div className="w-full max-w-[500px] md:max-w-[600px] aspect-square">
                 <CircularChart 
                   padding="p-0"
@@ -385,12 +344,10 @@ export default function Home() {
                 />
               </div>
             </div>
-            
           </div>
         </section>
       </main>
 
-      {/* Carousel Sections - Full Viewport Width */}
       <section ref={section2Ref} className="w-full py-16">
         <UniversalCarousel slides={OWNER_SLIDES} />
       </section>  
@@ -398,14 +355,11 @@ export default function Home() {
         <UniversalCarousel slides={OWNER_QUOTE_SLIDES} />
       </section>
 
-      {/* Bottom Content Sections */}
       <div className="w-full max-w-[1600px] mx-auto px-8 md:px-28 space-y-32 pb-20">
-        {/* Pricing Section */}
         <section id="pricing-section" ref={pricingRef} className="w-full">
           <Pricing onLearnMoreClick={() => openPopup('pricing')} />
         </section>
 
-        {/* Newsletter Signup Section */}
         <section id="newsletter-signup" className="w-full">
           <NewsletterSignup />
         </section>
@@ -413,13 +367,11 @@ export default function Home() {
 
       <Footer />
 
-      {/* Sticky Bottom CTA */}
       <StickyBottomCTA 
         onButtonClick={() => openPopup('default')}
         hideBeforeElementId="pricing-section"
       />
 
-      {/* Form Popup */}
       <FormPopup 
         isOpen={isPopupOpen}
         onClose={closePopup}

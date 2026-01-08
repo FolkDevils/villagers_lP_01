@@ -99,4 +99,3 @@ export default function CircularChart({ padding = "p-8", chartRef, outerRingRef,
     </div>
   );
 }
-

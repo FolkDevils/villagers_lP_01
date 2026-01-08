@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import UniversalCarousel, { CarouselSlide } from "../components/UniversalCarousel";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import CircularChart from "../components/CircularChart";
 import HeroSection from "../components/HeroSection";
 import ContentBlock from "../components/ContentBlock";
 import BarChart from "../components/BarChart";
@@ -132,8 +130,7 @@ export default function Home() {
   const closePopup = () => {
     setIsPopupOpen(false);
   };
-  
-  // Refs for second section animation
+
   const section2ContentRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<HTMLDivElement>(null);
   const leftBarImageRef = useRef<HTMLImageElement>(null);
@@ -142,12 +139,8 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // --- 1. Set Initial Body Color ---
       gsap.set("body", { backgroundColor: "#FCFBF5" });
-      
-      // --- Second Section Scroll Animations ---
-      
-      // 1. Text Content Animation
+
       if (section2ContentRef.current) {
         gsap.fromTo(section2ContentRef.current.children,
           { y: 30, opacity: 0 },
@@ -159,26 +152,20 @@ export default function Home() {
             ease: "power2.out",
             scrollTrigger: {
               trigger: section2ContentRef.current,
-              start: "top 80%", // Start when top of content hits 80% of viewport height
+              start: "top 80%",
               toggleActions: "play none none reverse"
             }
           }
         );
       }
 
-      // 2. Chart Animation (Bars growing up)
       if (chartRef.current) {
-        // Select the bar containers (divs that are direct children of the flex container)
-        // Adjust selector based on structure: The flex container has two bar divs
         const bars = chartRef.current.querySelectorAll(":scope > div");
-        
-        // We need to animate the height of the bars, but keep the content pinned to the bottom.
-        // Since we are using flex-end alignment in the parent, height animation works well.
         
         gsap.fromTo(bars,
           { height: "0%" },
           {
-            height: (index) => index === 0 ? "80%" : "100%", // Restore original heights: 80% for left, 100% for right
+            height: (index) => index === 0 ? "80%" : "100%",
             duration: 1.5,
             stagger: 0.2,
             ease: "power2.out",
@@ -190,7 +177,6 @@ export default function Home() {
           }
         );
 
-        // Green Overlay Animation (Left Bar) - Grows after main bar starts
         const greenOverlay = chartRef.current.querySelector(".green-overlay");
         const leftBarText = chartRef.current.querySelector(".left-bar-text");
 
@@ -201,7 +187,7 @@ export default function Home() {
               height: "50%",
               duration: 1.5,
               ease: "power2.out",
-              delay: 0.5, // Starts after main bar growth begins
+              delay: 0.5,
               scrollTrigger: {
                 trigger: chartRef.current,
                 start: "top 80%",
@@ -211,7 +197,6 @@ export default function Home() {
           );
         }
 
-        // Left Bar Text Animation - Fades in as green overlay grows
         if (leftBarText) {
           gsap.fromTo(leftBarText,
             { opacity: 0, y: 20 },
@@ -220,7 +205,7 @@ export default function Home() {
               y: 0,
               duration: 1,
               ease: "power2.out",
-              delay: 1.2, // Starts midway through green overlay growth
+              delay: 1.2,
               scrollTrigger: {
                 trigger: chartRef.current,
                 start: "top 80%",
@@ -230,7 +215,6 @@ export default function Home() {
           );
         }
 
-        // Circle Animation (Right Bar) - Plays as green bar is finishing
         const circle = chartRef.current.querySelector(".chart-circle");
         const circleText = chartRef.current.querySelector(".chart-circle-text");
 
@@ -241,18 +225,17 @@ export default function Home() {
               scale: 1,
               opacity: 1,
               duration: 0.8,
-              ease: "power2.out", // Removed bounce
-              delay: 1.2, // Starts as green overlay is nearing completion (0.5 + 1.5 duration)
+              ease: "power2.out",
+              delay: 1.2,
               scrollTrigger: {
                 trigger: chartRef.current,
-                start: "top 80%", // Sync trigger with bars
+                start: "top 80%",
                 toggleActions: "play none none reverse"
               }
             }
           );
         }
 
-        // Text inside circle fades in as circle completes
         if (circleText) {
            gsap.fromTo(circleText,
             { opacity: 0, y: 10 },
@@ -261,10 +244,10 @@ export default function Home() {
               y: 0,
               duration: 0.5,
               ease: "power2.out",
-              delay: 1.6, // Fades in as circle finishes
+              delay: 1.6,
               scrollTrigger: {
                 trigger: chartRef.current,
-                start: "top 80%", // Sync trigger with bars/circle
+                start: "top 80%",
                 toggleActions: "play none none reverse"
               }
             }
@@ -272,8 +255,6 @@ export default function Home() {
         }
       }
 
-
-      // --- 3. Scroll-Linked Color Interpolation ---
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: "body",
@@ -286,15 +267,11 @@ export default function Home() {
       tl.to("body", { backgroundColor: "#FEFEF9", duration: 0.5 }, 0.3);
       tl.to("body", { backgroundColor: "#FFFFFE", duration: 0.5 }, 1);
 
-
-      // --- 4. Parallax Effect for Chart Images ---
-      // Left Bar Image
       if (leftBarImageRef.current) {
-        // Set initial scale and position to ensure coverage
         gsap.set(leftBarImageRef.current, { scale: 1.3, yPercent: -10 });
         
         gsap.to(leftBarImageRef.current, {
-          yPercent: 30, // Move from -10 to 10 for parallax range
+          yPercent: 30,
           ease: "none",
           scrollTrigger: {
             trigger: chartRef.current,
@@ -305,13 +282,11 @@ export default function Home() {
         });
       }
 
-      // Right Bar Image
       if (rightBarImageRef.current) {
-         // Set initial scale and position to ensure coverage
          gsap.set(rightBarImageRef.current, { scale: 1.3, yPercent: -10 });
 
          gsap.to(rightBarImageRef.current, {
-          yPercent: 30, // Move from -10 to 10 for parallax range
+          yPercent: 30,
           ease: "none",
           scrollTrigger: {
             trigger: chartRef.current,
@@ -328,12 +303,9 @@ export default function Home() {
   }, []);
 
   return (
-    // Removed bg-[#dfffde] class here to allow body color to show through
     <div className="min-h-screen flex flex-col overflow-x-hidden font-poppins">
-      {/* Navigation Bar */}
       <NavBar />
 
-      {/* Hero Section - extends under nav */}
       <HeroSection
         backgroundImage="/customerHero08.png"
         mobileBackgroundImage="/heroCustomer_mobile.png"
@@ -343,9 +315,7 @@ export default function Home() {
         onButtonClick={openPopup}
       />
 
-      {/* Main Content - Bar Chart Section */}
       <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20 relative z-10">
-        {/* Content Block 01 */}
         <ContentBlock
           sectionRef={section1Ref}
           title="You can see how your dollars support your community."
@@ -367,7 +337,6 @@ export default function Home() {
         />
       </main>
 
-      {/* Carousel Sections - Full Viewport Width */}
       <section ref={section2Ref} className="w-full py-16">
         <UniversalCarousel slides={CUSTOMER_SLIDES} />
       </section>
@@ -378,12 +347,10 @@ export default function Home() {
 
       <Footer />
 
-      {/* Sticky Bottom CTA */}
       <StickyBottomCTA 
         onButtonClick={openPopup}
       />
 
-      {/* Form Popup */}
       <FormPopup 
         isOpen={isPopupOpen}
         onClose={closePopup}
