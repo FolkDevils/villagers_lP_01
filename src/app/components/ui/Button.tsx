@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { cn } from "../../../lib/utils";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -39,7 +40,8 @@ export default function Button({
     large: "px-12 py-5 text-lg md:text-xl"
   };
   
-  const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+  // Merged classes using cn()
+  const combinedStyles = cn(baseStyles, variantStyles[variant], sizeStyles[size], className);
   
   const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
@@ -87,4 +89,3 @@ export default function Button({
     </button>
   );
 }
-

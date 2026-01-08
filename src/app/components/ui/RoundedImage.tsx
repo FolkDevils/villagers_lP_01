@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cn } from "../../../lib/utils";
 
 interface RoundedImageProps {
   src: string;
@@ -26,7 +27,12 @@ export default function RoundedImage({
 }: RoundedImageProps) {
   return (
     <div
-      className={`relative w-full h-full ${topRadius} ${bottomRadius} overflow-hidden ${className}`}
+      className={cn(
+        "relative w-full h-full overflow-hidden",
+        topRadius,
+        bottomRadius,
+        className
+      )}
     >
       <Image
         src={src}
@@ -39,4 +45,3 @@ export default function RoundedImage({
     </div>
   );
 }
-

@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import Button from "./Button";
+import Button from "../ui/Button";
+import { PRICING_TIERS, PricingTier } from "../../data/pricing";
 
 interface PricingProps {
   onLearnMoreClick?: () => void;
@@ -15,6 +16,7 @@ const CheckIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className="shrink-0"
+    aria-hidden="true"
   >
     <path
       d="M2 6.5L7.5 11L19 2"
@@ -26,60 +28,6 @@ const CheckIcon = () => (
   </svg>
 );
 
-const PRICING_TIERS = [
-  {
-    name: "Start Building",
-    price: "29",
-    period: "/mo",
-    description: (
-      <>
-        Recommended for all locally <br /> owned businesses
-      </>
-    ),
-    features: [
-      "Customers receive a Local Impact Receipt with every purchase",
-      "AI-driven business insights (3 per weekly summary)",
-      "Cross promote fellow Villagers local businesses",
-    ],
-  },
-  {
-    name: "Relationship Builder",
-    price: "199",
-    period: "/mo",
-    description: (
-      <>
-        Recommended for merchants <br /> with annual revenue $500k-$1M
-      </>
-    ),
-    features: [
-      "Customers receive a Local Impact Receipt with every purchase",
-      "Cross promote fellow Villagers local businesses",
-      "Enhanced AI-driven business insights Dashboard",
-      "Customer Profiles (CRM)",
-      "Enriched Customer Data (top 100)",
-      "AI driven \"next best actions\" and personalized AI pre-drafted emails (3 / day)",
-    ],
-  },
-  {
-    name: "Community Builder",
-    price: "349",
-    period: "/mo",
-    description: "Recommended for merchants who have (or want to have) annual revenue above $1M",
-    features: [
-      "Customers receive a Local Impact Receipt with every purchase",
-      "Cross promote fellow Villagers local businesses",
-      "Enhanced AI-driven business insights Dashboard",
-      "Customer Profiles (CRM)",
-      "Enriched Customer Data (Top 35%)",
-      "AI driven \"next best actions\" and personalized AI pre-drafted emails (unlimited)",
-      "Group emails (unlimited)",
-      "Integrated SMS (unlimited)",
-      "Integrated event and appointment scheduling (unlimited)",
-      "Enhanced cross-promotional collaboration (unlimited)",
-    ],
-  },
-];
-
 export default function Pricing({ onLearnMoreClick }: PricingProps) {
   return (
     <div className="w-full flex flex-col items-center gap-8 pt-8 pb-4">
@@ -87,7 +35,7 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
         Three Ways To Build Your Village.
       </h1>
       <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4 px-0 lg:px-0  mx-auto">
-        {PRICING_TIERS.map((tier, index) => (
+        {PRICING_TIERS.map((tier: PricingTier, index: number) => (
           <div
             key={index}
             className="bg-[#fdf0da] pt-24 pb-16 px-6 sm:px-12 rounded-[32px] flex flex-col items-center h-full "
@@ -108,9 +56,9 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
                   </span>
                 </div>
 
-                <p className="font-poppins font-medium text-[#332e2e] mt-2 text-xs text-center min-h-[48px]">
+                <div className="font-poppins font-medium text-[#332e2e] mt-2 text-xs text-center min-h-[48px]">
                   {tier.description}
-                </p>
+                </div>
               </div>
 
               <Button 
@@ -142,4 +90,3 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
     </div>
   );
 }
-

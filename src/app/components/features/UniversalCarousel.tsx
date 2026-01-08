@@ -1,59 +1,12 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import RoundedImage from "./RoundedImage";
-import DonutChart from "./DonutChart";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import RoundedImage from "../ui/RoundedImage";
+import AnimatedChartSlide from "./AnimatedChartSlide";
+import { CarouselSlide } from "../../../types/slides";
 
-gsap.registerPlugin(ScrollTrigger);
-
-// Slide content types
-export interface BaseSlide {
-  id: string;
-  type: "chart" | "image" | "quote" | "quote-with-logo";
-}
-
-export interface ChartSlide extends BaseSlide {
-  type: "chart";
-  title: string;
-  description: React.ReactNode;
-  chartConfig?: {
-    largePercentage: string;
-    largeLabel: string;
-    smallPercentage: string;
-    smallLabel: string;
-  };
-}
-
-export interface ImageSlide extends BaseSlide {
-  type: "image";
-  imageSrc: string;
-  imageAlt: string;
-  title: string;
-  description: React.ReactNode;
-}
-
-export interface QuoteSlide extends BaseSlide {
-  type: "quote";
-  imageSrc: string;
-  imageAlt: string;
-  quote: string;
-}
-
-export interface QuoteWithLogoSlide extends BaseSlide {
-  type: "quote-with-logo";
-  imageSrc: string;
-  imageAlt: string;
-  quote: string;
-  logoSrc: string;
-  logoAlt: string;
-  logoWidth?: number;
-  logoHeight?: number;
-}
-
-export type CarouselSlide = ChartSlide | ImageSlide | QuoteSlide | QuoteWithLogoSlide;
+// --- Main Component ---
 
 interface UniversalCarouselProps {
   slides: CarouselSlide[];
@@ -70,98 +23,7 @@ export default function UniversalCarousel({
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // Refs for DonutChart animation
-  const donutChartRef = useRef<HTMLDivElement>(null);
-  const largeCircleRef = useRef<HTMLDivElement>(null);
-  const smallCircleRef = useRef<HTMLDivElement>(null);
-  const largeTextRef = useRef<HTMLDivElement>(null);
-  const smallTextRef = useRef<HTMLDivElement>(null);
-
   const minSwipeDistance = 50;
-
-  // DonutChart scroll animation
-  useEffect(() => {
-    if (
-      !donutChartRef.current ||
-      !largeCircleRef.current ||
-      !smallCircleRef.current ||
-      !largeTextRef.current ||
-      !smallTextRef.current
-    )
-      return;
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        largeCircleRef.current,
-        { scale: 0.5, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 1.4,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: donutChartRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        largeTextRef.current,
-        { opacity: 0, scale: 0.5, x: -30 },
-        {
-          opacity: 1,
-          scale: 1,
-          x: 0,
-          duration: 1,
-          ease: "back.out(2)",
-          delay: 0.4,
-          scrollTrigger: {
-            trigger: donutChartRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        smallCircleRef.current,
-        { scale: 0.5, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 1.4,
-          ease: "back.out(1.7)",
-          delay: 0.5,
-          scrollTrigger: {
-            trigger: donutChartRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        smallTextRef.current,
-        { opacity: 0, scale: 0.5 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "back.out(2)",
-          delay: 1.0,
-          scrollTrigger: {
-            trigger: donutChartRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-
-    return () => ctx.revert();
-  }, []);
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -197,21 +59,8 @@ export default function UniversalCarousel({
 
   const renderVisual = (slide: CarouselSlide, index: number) => {
     if (slide.type === "chart") {
-      return (
-        <div className="relative w-full max-w-[500px] lg:max-w-[600px] aspect-square">
-          <DonutChart
-            largePercentage={slide.chartConfig?.largePercentage || "85%"}
-            largeLabel={slide.chartConfig?.largeLabel || "Total Sales"}
-            smallPercentage={slide.chartConfig?.smallPercentage || "35%"}
-            smallLabel={slide.chartConfig?.smallLabel || "customers"}
-            chartRef={donutChartRef}
-            largeCircleRef={largeCircleRef}
-            smallCircleRef={smallCircleRef}
-            largeTextRef={largeTextRef}
-            smallTextRef={smallTextRef}
-          />
-        </div>
-      );
+      // Use the encapsulated sub-component
+      return <AnimatedChartSlide slide={slide} />;
     }
 
     // All other types have images
@@ -344,4 +193,3 @@ export default function UniversalCarousel({
     </div>
   );
 }
-

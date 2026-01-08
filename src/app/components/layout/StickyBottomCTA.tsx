@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Button from "./Button";
+import Button from "../ui/Button";
 
 interface StickyBottomCTAProps {
   onButtonClick?: () => void;
@@ -105,35 +105,6 @@ export default function StickyBottomCTA({
           Become a villager
         </Button>
       </div>
-
-      <style jsx>{`
-        @keyframes slideUp {
-          from {
-            transform: translateY(100%);
-          }
-          to {
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideDown {
-          from {
-            transform: translateY(0);
-          }
-          to {
-            transform: translateY(100%);
-          }
-        }
-
-        .animate-slideUp {
-          animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .animate-slideDown {
-          animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.6, 1) forwards;
-        }
-      `}</style>
     </div>
   );
 }
-

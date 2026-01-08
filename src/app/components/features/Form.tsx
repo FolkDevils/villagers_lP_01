@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "./Button";
+import Button from "../ui/Button";
 
 interface FormProps {
   title?: React.ReactNode;

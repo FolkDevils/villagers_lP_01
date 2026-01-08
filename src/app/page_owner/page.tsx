@@ -1,137 +1,17 @@
 "use client";
 
-import Image from "next/image";
-import UniversalCarousel, { CarouselSlide } from "../components/UniversalCarousel";
-import Pricing from "../components/Pricing";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import CircularChart from "../components/CircularChart";
-import HeroSection from "../components/HeroSection";
-import ContentBlock from "../components/ContentBlock";
-import FormPopup from "../components/FormPopup";
-import StickyBottomCTA from "../components/StickyBottomCTA";
-import NewsletterSignup from "../components/NewsletterSignup";
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-// Carousel 1: Owner features with chart
-const OWNER_SLIDES: CarouselSlide[] = [
-  {
-    id: "chart",
-    type: "chart",
-    title: "Know Your Village",
-    description: (
-      <>
-        <p className="mb-6">
-          Get to know the people who really matter— the 35% who drive 80% of your revenue.  </p> <p className="mb-6">
-          Villagers automatically brings your top customers to the forefront and helps you to keep them coming back, so you can focus where it matters most.
-        </p>
-      </>
-    ),
-    chartConfig: {
-      largePercentage: "85%",
-      largeLabel: "Total Sales",
-      smallPercentage: "35%",
-      smallLabel: "customers",
-    },
-  },
-  {
-    id: "impact",
-    type: "image",
-    imageSrc: "/block02_image_05.png",
-    imageAlt: "Local Impact",
-    title: "What impacts one, impacts us all",
-    description: (
-      <>
-        <p className="mb-4">
-        Each purchase triggers a Local Impact Receipt showing how dollars stay local and support the community. Customers see their impact, and you automatically collect verified emails.
-        </p>
-        <p className="font-bold">
-          The Local Impact Receipt builds loyalty by illustrating purpose and connection
-        </p>
-      </>
-    ),
-  },
-  {
-    id: "engage",
-    type: "image",
-    imageSrc: "/block02_image_06.png",
-    imageAlt: "Engage & Grow",
-    title: "Engage & Grow",
-    description: (
-      <>
-        <p className="mb-6">Email, SMS, events, and AI insights — all in one place.
-          Your AI assistant, Alder, enriches customer profiles, drafts messages, and identifies your next best actions automatically.
-  So you can be on the floor, talking to the people that matter.</p>
-      </>
-    ),
-  },
-  {
-    id: "value",
-    type: "image",
-    imageSrc: "/block02_image_07.png",
-    imageAlt: "Create Value",
-    title: "Create Lasting Value",
-    description: (
-      <>
-        <p className="mb-6">
-          Villagers is all about helping you retain your best customers, elevate your regulars, and turn data into true connection points.
-        Nothing grows your dream like real people and real contact. Villagers is here to support that.</p>
-      </>
-    ),
-  },
-];
-
-// Carousel 2: Owner quotes with logos
-const OWNER_QUOTE_SLIDES: CarouselSlide[] = [
-  {
-    id: "quote-1",
-    type: "quote-with-logo",
-    quote: "\u201CVillagers helped us connect with the customers who make our shop thrive.\u201D",
-    logoSrc: "/logo_yonderlust.svg",
-    logoAlt: "Yonderlust",
-    imageSrc: "/quote_01b.png",
-    imageAlt: "Customer testimonial",
-    logoWidth: 180,
-    logoHeight: 50,
-  },
-  {
-    id: "quote-2",
-    type: "quote-with-logo",
-    quote: "\u201CVillagers changed my business in ways I could not have thought possible.\u201D",
-    logoSrc: "/logo_indio.svg",
-    logoAlt: "Indio",
-    imageSrc: "/quote_02.png",
-    imageAlt: "Customer testimonial",
-    logoWidth: 110,
-    logoHeight: 50,
-  },
-  {
-    id: "quote-3",
-    type: "quote-with-logo",
-    quote: "\u201CI was able to connect with my customers like never before \u201D",
-    logoSrc: "/logo_ascend.svg",
-    logoAlt: "Ascend",
-    imageSrc: "/quote_03.png",
-    imageAlt: "Customer testimonial",
-    logoWidth: 150,
-    logoHeight: 50,
-  },
-  {
-    id: "quote-4",
-    type: "quote-with-logo",
-    quote: "\u201CVillagers made connecting with my customers online so easy.\u201D",
-    logoSrc: "/logo_bullseye.svg",
-    logoAlt: "Bullseye",
-    imageSrc: "/quote_05.png",
-    imageAlt: "Customer testimonial",
-    logoWidth: 100,
-    logoHeight: 110,
-  },
-];
+import { useRef, useState } from "react";
+import UniversalCarousel from "../components/features/UniversalCarousel";
+import Pricing from "../components/features/Pricing";
+import Footer from "../components/layout/Footer";
+import NavBar from "../components/layout/NavBar";
+import CircularChart from "../components/charts/CircularChart";
+import HeroSection from "../components/layout/HeroSection";
+import FormPopup from "../components/features/FormPopup";
+import StickyBottomCTA from "../components/layout/StickyBottomCTA";
+import NewsletterSignup from "../components/features/NewsletterSignup";
+import { useScrollAnimations } from "../../hooks/useScrollAnimations";
+import { OWNER_SLIDES, OWNER_QUOTE_SLIDES } from "../data/slides";
 
 export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -184,127 +64,10 @@ export default function Home() {
   const section1Ref = useRef<HTMLElement>(null);
   const section2Ref = useRef<HTMLElement>(null);
   const pricingRef = useRef<HTMLElement>(null);
-  const footerRef = useRef<HTMLElement>(null);
   
-  // Refs for CircularChart animation
-  const circularChartRef = useRef<HTMLDivElement>(null);
-  const outerRingRef = useRef<SVGCircleElement>(null);
-  const innerRingRef = useRef<SVGCircleElement>(null);
-  const outerBgRef = useRef<SVGCircleElement>(null);
-  const innerBgRef = useRef<SVGCircleElement>(null);
-  const chartContentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.set("body", { backgroundColor: "#FCFBF5" });
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top", 
-          end: "bottom bottom",
-          scrub: 1, 
-        }
-      });
-
-      tl.to("body", { backgroundColor: "#FEFEF9", duration: 0.5 }, 0.3);
-      tl.to("body", { backgroundColor: "#FFFFFE", duration: 0.4 }, .95);
-      if (circularChartRef.current && outerRingRef.current && innerRingRef.current && outerBgRef.current && innerBgRef.current && chartContentRef.current) {
-        // Get the computed strokeDashoffset values (the target values)
-        const outerFinalOffset = outerRingRef.current.getAttribute('stroke-dashoffset') || '0';
-        const innerFinalOffset = innerRingRef.current.getAttribute('stroke-dashoffset') || '0';
-        const circumference = 2 * Math.PI * 85; // Match the outer radius
-        
-        // Animate OUTER RING GROUP (background + overlay) together with dramatic scale
-        gsap.fromTo([outerBgRef.current, outerRingRef.current],
-          { 
-            scale: 0.5,
-            opacity: 0,
-            transformOrigin: "center center"
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 1.4,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-              trigger: circularChartRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-        
-        gsap.fromTo(outerRingRef.current,
-          { strokeDashoffset: circumference },
-          {
-            strokeDashoffset: outerFinalOffset,
-            duration: 1.4,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: circularChartRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-        
-        gsap.fromTo([innerBgRef.current, innerRingRef.current],
-          { 
-            scale: 0.5,
-            opacity: 0,
-            transformOrigin: "center center"
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 1.4,
-            ease: "back.out(1.7)",
-            delay: 0.5,
-            scrollTrigger: {
-              trigger: circularChartRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-        
-        gsap.fromTo(innerRingRef.current,
-          { strokeDashoffset: circumference },
-          {
-            strokeDashoffset: innerFinalOffset,
-            duration: 1.4,
-            ease: "power2.out",
-            delay: 0.5,
-            scrollTrigger: {
-              trigger: circularChartRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-        
-        gsap.fromTo(chartContentRef.current,
-          { opacity: 0, scale: 0.5 },
-          {
-            opacity: 1,
-            scale: 1,
-            duration: 1,
-            ease: "back.out(2)",
-            delay: 1.2,
-            scrollTrigger: {
-              trigger: circularChartRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-      }
-
-    });
-
-    return () => ctx.revert();
-  }, []);
+  // Hook only handles global page animations (background color)
+  // Component-specific animations are now encapsulated within CircularChart
+  useScrollAnimations();
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden font-poppins">
@@ -333,15 +96,8 @@ export default function Home() {
 
             <div className="order-1 lg:order-2 lg:col-span-7 flex justify-center items-center">
               <div className="w-full max-w-[500px] md:max-w-[600px] aspect-square">
-                <CircularChart 
-                  padding="p-0"
-                  chartRef={circularChartRef}
-                  outerRingRef={outerRingRef}
-                  innerRingRef={innerRingRef}
-                  outerBgRef={outerBgRef}
-                  innerBgRef={innerBgRef}
-                  contentRef={chartContentRef}
-                />
+                {/* CircularChart now handles its own animations */}
+                <CircularChart padding="p-0" />
               </div>
             </div>
           </div>
@@ -382,4 +138,3 @@ export default function Home() {
     </div>
   );
 }
-

@@ -77,6 +77,8 @@ export default function FormPopup({
     <div 
       className={`fixed inset-0 z-50 flex items-center justify-center p-4 ${isClosing ? 'animate-fadeOut' : 'animate-fadeIn'}`}
       onClick={handleClose}
+      role="dialog"
+      aria-modal="true"
     >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
@@ -110,65 +112,6 @@ export default function FormPopup({
           onSubmit={handleSubmit}
         />
       </div>
-
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @keyframes fadeOut {
-          0% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
-
-        @keyframes popUp {
-          from {
-            opacity: 0;
-            transform: scale(0.9) translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-        }
-
-        @keyframes popDown {
-          from {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-          to {
-            opacity: 0;
-            transform: scale(0.95) translateY(10px);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 0.25s ease-out forwards;
-        }
-
-        .animate-fadeOut {
-          animation: fadeOut 0.15s ease-in 0.1s forwards;
-        }
-
-        .animate-popUp {
-          animation: popUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        .animate-popDown {
-          animation: popDown 0.3s cubic-bezier(0.4, 0, 0.6, 1) forwards;
-        }
-      `}</style>
     </div>
   );
 }
-
