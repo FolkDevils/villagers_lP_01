@@ -259,7 +259,7 @@ export default function UniversalCarousel({
     if (slide.type === "quote-with-logo") {
       return (
         <div className="p-responsive text-[#333333]">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
             <p className="-indent-[0.4em] font-playfair font-semibold text-[#2D2D2D] text-2xl md:text-3xl leading-tight">
               {slide.quote}
             </p>
@@ -314,10 +314,10 @@ export default function UniversalCarousel({
         </div>
       </div>
 
-      {/* Navigation Arrows - 16px from viewport edges */}
+      {/* Navigation Arrows - Below content on mobile, centered on desktop */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-[46px] h-[46px] rounded-full border-2 border-[#FF4930] bg-[#FF4930] flex items-center justify-center transition-all hover:bg-white hover:border-[#FF4930] focus:outline-none group z-20 shadow-lg"
+        className="absolute left-4 -bottom-10 lg:top-1/2 lg:-translate-y-1/2 lg:bottom-auto w-[46px] h-[46px] rounded-full border-2 border-[#FF4930] bg-[#FF4930] flex items-center justify-center transition-all hover:bg-white hover:border-[#FF4930] focus:outline-none group z-20 shadow-lg"
         aria-label="Previous slide"
       >
         <Image
@@ -330,7 +330,7 @@ export default function UniversalCarousel({
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-[46px] h-[46px] rounded-full border-2 border-[#FF4930] bg-[#FF4930] flex items-center justify-center transition-all hover:bg-white hover:border-[#FF4930] focus:outline-none group z-20 shadow-lg"
+        className="absolute right-4 -bottom-10 lg:top-1/2 lg:-translate-y-1/2 lg:bottom-auto w-[46px] h-[46px] rounded-full border-2 border-[#FF4930] bg-[#FF4930] flex items-center justify-center transition-all hover:bg-white hover:border-[#FF4930] focus:outline-none group z-20 shadow-lg"
         aria-label="Next slide"
       >
         <Image

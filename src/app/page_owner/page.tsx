@@ -26,9 +26,7 @@ const OWNER_SLIDES: CarouselSlide[] = [
     description: (
       <>
         <p className="mb-6">
-          Get to know the people who really matter— the 35% who drive 80% of your revenue.
-        </p>
-        <p>
+          Get to know the people who really matter— the 35% who drive 80% of your revenue.  </p> <p className="mb-6">
           Villagers automatically brings your top customers to the forefront and helps you to keep them coming back, so you can focus where it matters most.
         </p>
       </>
@@ -49,13 +47,7 @@ const OWNER_SLIDES: CarouselSlide[] = [
     description: (
       <>
         <p className="mb-4">
-          Each purchase triggers a Local Impact Receipt showing how dollars stay local and power jobs and supports a thriving community.
-        </p>
-        <p className="mb-4">
-          your friends, neighbors and customers can see their impact and learn about the power of shopping local.
-        </p>
-        <p className="mb-4">
-          On your end, you'll collect verified emails automatically with helpful info.
+        Each purchase triggers a Local Impact Receipt showing how dollars stay local and support the community. Customers see their impact, and you automatically collect verified emails.
         </p>
         <p className="font-bold">
           The Local Impact Receipt builds loyalty by illustrating purpose and connection
@@ -71,12 +63,9 @@ const OWNER_SLIDES: CarouselSlide[] = [
     title: "Engage & Grow",
     description: (
       <>
-        <p className="mb-6 font-medium">Engage effortlessly. Grow together.</p>
-        <p className="mb-6">Email, SMS, events, and AI insights — all in one place.</p>
-        <p className="mb-6">
+        <p className="mb-6">Email, SMS, events, and AI insights — all in one place.
           Your AI assistant, Alder, enriches customer profiles, drafts messages, and identifies your next best actions automatically.
-        </p>
-        <p>So you can be on the floor, talking to the people that matter.</p>
+  So you can be on the floor, talking to the people that matter.</p>
       </>
     ),
   },
@@ -88,11 +77,9 @@ const OWNER_SLIDES: CarouselSlide[] = [
     title: "Create Lasting Value",
     description: (
       <>
-        <p className="mb-6">Enjoy the journey while growing the business.</p>
         <p className="mb-6">
           Villagers is all about helping you retain your best customers, elevate your regulars, and turn data into true connection points.
-        </p>
-        <p>Nothing grows your dream like real people and real contact. Villagers is here to support that.</p>
+        Nothing grows your dream like real people and real contact. Villagers is here to support that.</p>
       </>
     ),
   },

@@ -48,9 +48,7 @@ const CUSTOMER_SLIDES: CarouselSlide[] = [
     description: (
       <>
         <p className="mb-4">
-          there's a reason you return to your favorite stores. Maybe you love the owner. Maybe you find friends there. Maybe you love the service or the products.
-        </p>
-        <p className="mb-4">
+          There's a reason you return to your favorite stores. Maybe you love the owner. Maybe you love the service or the products.
           Villagers knows there is nothing more valuable than maintaining a supportive and thriving place for you to go.
         </p>
         <p className="font-bold">
@@ -67,9 +65,8 @@ const CUSTOMER_SLIDES: CarouselSlide[] = [
     title: "They thrive, you win.",
     description: (
       <>
-        <p className="mb-6 font-medium">Villagers AI system does so much for shop Owners.</p>
-        <p className="mb-6">Email, SMS, events, and AI insights — all in one place.</p>
-        <p>these tools allow them to keep in touch with you the very best way, personally and authentically.</p>
+        <p className="mb-6">Villagers AI system does so much for shop Owners.</p>
+        <p className="mb-6">Email, SMS, events, and AI insights — all in one place. These tools allow them to keep in touch with you the very best way, personally and authentically.</p>
       </>
     ),
   },
@@ -375,7 +372,7 @@ export default function Home() {
         <UniversalCarousel slides={CUSTOMER_SLIDES} />
       </section>
       
-      <section className="w-full py-16">
+      <section className="w-full py-16 pb-32">
         <UniversalCarousel slides={CUSTOMER_QUOTE_SLIDES} />
       </section>
 

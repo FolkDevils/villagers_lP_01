@@ -7,16 +7,22 @@ import Link from "next/link";
 export default function NavBar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const SCROLL_THRESHOLD = 60; // pixels of upward scroll needed to show nav
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Show nav when scrolling up or at the top
-      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+      // Always show nav at the very top
+      if (currentScrollY < 100) {
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Hide nav when scrolling down past 100px
+      } 
+      // Show nav only if scrolled up by threshold amount
+      else if (lastScrollY - currentScrollY > SCROLL_THRESHOLD) {
+        setIsVisible(true);
+      } 
+      // Hide nav when scrolling down
+      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
       }
       
