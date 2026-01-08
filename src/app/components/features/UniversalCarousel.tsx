@@ -149,7 +149,7 @@ export default function UniversalCarousel({
             <div key={slide.id} className="w-full flex-shrink-0 min-w-full">
               <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 w-full max-w-[1600px] mx-auto px-8 md:px-28 py-8">
                 {/* Visual Content Column - FILL SPACE */}
-                <div className="order-1 lg:order-1 w-full lg:flex-1 flex items-center justify-center lg:justify-end lg:pr-6">
+                <div className="order-1 lg:order-1 w-full lg:flex-1 flex items-center justify-center lg:justify-start">
                   {renderVisual(slide, index)}
                 </div>
 
