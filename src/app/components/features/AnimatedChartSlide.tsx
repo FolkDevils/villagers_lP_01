@@ -101,18 +101,21 @@ export default function AnimatedChartSlide({ slide }: { slide: ChartSlide }) {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[500px] lg:max-w-[600px] aspect-square">
-      <DonutChart
-        largePercentage={slide.chartConfig?.largePercentage || "85%"}
-        largeLabel={slide.chartConfig?.largeLabel || "Total Sales"}
-        smallPercentage={slide.chartConfig?.smallPercentage || "35%"}
-        smallLabel={slide.chartConfig?.smallLabel || "customers"}
-        chartRef={donutChartRef}
-        largeCircleRef={largeCircleRef}
-        smallCircleRef={smallCircleRef}
-        largeTextRef={largeTextRef}
-        smallTextRef={smallTextRef}
-      />
+    // Updated container: fills height, maintains square aspect ratio, centers content
+    <div className="relative h-full w-full flex items-center justify-center">
+      <div className="relative h-full aspect-square max-w-full">
+        <DonutChart
+          largePercentage={slide.chartConfig?.largePercentage || "85%"}
+          largeLabel={slide.chartConfig?.largeLabel || "Total Sales"}
+          smallPercentage={slide.chartConfig?.smallPercentage || "35%"}
+          smallLabel={slide.chartConfig?.smallLabel || "customers"}
+          chartRef={donutChartRef}
+          largeCircleRef={largeCircleRef}
+          smallCircleRef={smallCircleRef}
+          largeTextRef={largeTextRef}
+          smallTextRef={smallTextRef}
+        />
+      </div>
     </div>
   );
 }

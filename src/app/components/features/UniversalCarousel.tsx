@@ -58,9 +58,15 @@ export default function UniversalCarousel({
   };
 
   const renderVisual = (slide: CarouselSlide, index: number) => {
+    // Shared container class for consistent height across all slide types
+    const containerClass = "relative w-full h-[350px] sm:h-[550px] lg:h-[450px] xl:h-[550px] flex items-center justify-center";
+
     if (slide.type === "chart") {
-      // Use the encapsulated sub-component
-      return <AnimatedChartSlide slide={slide} />;
+      return (
+        <div className={containerClass}>
+          <AnimatedChartSlide slide={slide} />
+        </div>
+      );
     }
 
     // All other types have images
@@ -68,7 +74,7 @@ export default function UniversalCarousel({
     const imageAlt = slide.type === "image" || slide.type === "quote" || slide.type === "quote-with-logo" ? slide.imageAlt : "";
 
     return (
-      <div className="relative w-full max-w-[500px] lg:max-w-[600px] aspect-square">
+      <div className={containerClass}>
         <RoundedImage
           src={imageSrc}
           alt={imageAlt}
@@ -98,9 +104,10 @@ export default function UniversalCarousel({
     if (slide.type === "quote") {
       return (
         <div className="p-responsive text-[#333333]">
-          <p className="-indent-[0.4em] font-playfair font-semibold text-[#2D2D2D] text-2xl md:text-3xl leading-tight">
-            {slide.quote}
-          </p>
+          <p 
+            className="-indent-[0.4em] font-playfair font-semibold text-[#2D2D2D] text-2xl md:text-3xl leading-tight"
+            dangerouslySetInnerHTML={{ __html: slide.quote }}
+          />
         </div>
       );
     }
@@ -109,9 +116,10 @@ export default function UniversalCarousel({
       return (
         <div className="p-responsive text-[#333333]">
           <div className="flex flex-col gap-4">
-            <p className="-indent-[0.4em] font-playfair font-semibold text-[#2D2D2D] text-2xl md:text-3xl leading-tight">
-              {slide.quote}
-            </p>
+            <p 
+              className="-indent-[0.4em] font-playfair font-semibold text-[#2D2D2D] text-2xl md:text-3xl leading-tight"
+              dangerouslySetInnerHTML={{ __html: slide.quote }}
+            />
             <div
               className="relative ml-4"
               style={{
@@ -147,14 +155,14 @@ export default function UniversalCarousel({
         >
           {slides.map((slide, index) => (
             <div key={slide.id} className="w-full flex-shrink-0 min-w-full">
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12 w-full max-w-[1600px] mx-auto px-8 md:px-28 py-8">
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-16 w-full max-w-[1600px] mx-auto px-8 md:px-28 py-8">
                 {/* Visual Content Column - FILL SPACE */}
                 <div className="order-1 lg:order-1 w-full lg:flex-1 flex items-center justify-center lg:justify-start">
                   {renderVisual(slide, index)}
                 </div>
 
                 {/* Text Content Column - FILL SPACE */}
-                <div className="order-2 lg:order-2 w-full lg:flex-1 mt-4 lg:mt-0 z-10 relative flex flex-col lg:pl-6 self-center">
+                <div className="order-2 lg:order-2 w-full lg:flex-1 mt-4 lg:mt-0 z-10 relative pr-16 flex flex-col self-center">
                   {renderContent(slide)}
                 </div>
               </div>

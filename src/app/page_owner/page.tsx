@@ -95,7 +95,7 @@ export default function Home() {
             </div>
 
             <div className="order-1 lg:order-2 lg:col-span-7 flex justify-center items-center">
-              <div className="w-full max-w-[500px] md:max-w-[600px] aspect-square">
+              <div className="w-full max-w-[500px] md:max-w-[600px] aspect-square mx-auto">
                 {/* CircularChart now handles its own animations */}
                 <CircularChart padding="p-0" />
               </div>

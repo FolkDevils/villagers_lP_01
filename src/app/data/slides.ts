@@ -67,7 +67,7 @@ export const OWNER_QUOTE_SLIDES: CarouselSlide[] = [
   {
     id: "quote-3",
     type: "quote-with-logo",
-    quote: "\u201CI was able to connect with my customers like never before \u201D",
+    quote: "\u201CI was able to connect with my <br/>customers like never before \u201D",
     logoSrc: "/logo_ascend.svg",
     logoAlt: "Ascend",
     imageSrc: "/quote_03.png",
