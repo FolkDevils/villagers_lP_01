@@ -136,7 +136,7 @@ Local Merchants have a superpower giant stores don&apos;t. Authentic experiences
 
             <div className="flex flex-col gap-4 text-center text-[#332E2E] max-w-[900px] mx-auto">
               <h1 className="h1-responsive text-[#332E2E]" >
-              Durham-born by a local boutique owner.<br />Fellow merchant-tested. Rebuilding the Village
+              Durham-born by a local boutique owner.<br />Fellow merchant-tested. Rebuilding the Village.
               </h1>
 
                 <p className="text-center max-w-[700px] text-[#332E2E] mx-auto"> When your customers see this badge in your window, they know you're certified locally-owned, invested in community, and part of the movement.
