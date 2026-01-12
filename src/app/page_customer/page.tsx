@@ -1,12 +1,15 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import UniversalCarousel from "../components/features/UniversalCarousel";
+
+import Refferal from "../components/features/Refferal";
 import Footer from "../components/layout/Footer";
 import NavBar from "../components/layout/NavBar";
 import HeroSection from "../components/layout/HeroSection";
-import ContentBlock from "../components/ui/ContentBlock";
 import BarChart from "../components/charts/BarChart";
+import Button from "../components/ui/Button";
 import StickyBottomCTA from "../components/layout/StickyBottomCTA";
 import FormPopup from "../components/features/FormPopup";
 import { useChartAnimations } from "../../hooks/useChartAnimations";
@@ -41,39 +44,83 @@ export default function Home() {
       <HeroSection
         backgroundImage="/customerHero08.png"
         mobileBackgroundImage="/heroCustomer_mobile.png"
-        title={<>You aren't a customer,<br />You're a Villager.</>}
-        description="We are people. We are neighbors, friends, and the ones who love our community. Villagers helps the business you love to see you as just far more than just a customer."
+        title={<>You Are What Makes Your Village Special.</>}
+        description="When you become a Villager you see how your choices strengthen your local economy, one purchase at a time.Every time you shop local, you're choosing experiences over transactions, neighbors over algorithms, and community over convenience."
         buttonText="Join the Village"
         onButtonClick={openPopup}
       />
 
-      <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 pb-20 relative z-10">
-        <ContentBlock
-          sectionRef={section1Ref}
-          title="You can see how your dollars support your community."
-          description="When you shop in your Village, you'll be shown just how much you helped your community, and not some faceless corporation hundreds of miles away."
-          rightComponent={
-            // BarChart now handles its own internal animations
+      <main className="flex-1 w-full max-w-[1600px] mx-auto px-8 md:px-28 relative z-10">
+        <section ref={section1Ref} className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-20  lg:gap-20 items-center">
+          {/* Left Text Content */}
+          <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-6">
+            <h1 className="h1-responsive text-[#332E2E]">
+              You can see how your dollars support your community.
+            </h1>
+
+            <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
+              <p><span className="font-bold">Shopping local means having real conversations.</span> Discovering new favorites, bumping into neighbors, supporting the chef who knows your order. You're experiencing the places that make your community yours.</p>
+              <p><span className="font-bold">The To Act Is Now.</span> Since 2000, locally-owned businesses have dropped from 50% to just 28% of the retail market. People didn't stop caring about experiences, e-commerce and chains just had better tools and infrastructure.</p>
+              <p><span className="font-bold">Here's where you come in.</span> Villagers shows you proof that your choices are making a difference. Together, we're choosing to live through relationships over transactions.</p>
+            </div>
+          </div>
+
+          {/* Right Component */}
+          <div className="relative w-full max-w-[600px] lg:max-w-none lg:w-full justify-self-center order-1 lg:order-2 lg:col-span-6 flex items-center justify-center">
+            {/* BarChart now handles its own internal animations */}
             <BarChart
-            leftBarImage="/local.png"
-            leftBarPercentage="52%"
-            leftBarLabel="Stays Local"
-            leftBarDetails={["Of every dollar spent", "(vs. 6% online)"]}
-            rightBarImage="/Customer_05.png"
-            rightBarValue="1.5x"
-            rightBarLabel="Economic Multiplier"
-          />
-          }
-        />
+              leftBarImage="/local.png"
+              leftBarPercentage="52%"
+              leftBarLabel="Stays Local"
+              leftBarDetails={["Of every dollar spent", "(vs. 6% online)"]}
+              rightBarImage="/Customer_05.png"
+              rightBarValue="1.5x"
+              rightBarLabel="Economic Multiplier"
+            />
+          </div>
+        </section>
       </main>
 
-      <section ref={section2Ref} className="w-full py-16">
+      <section ref={section2Ref} className="w-full pt-16">
         <UniversalCarousel slides={CUSTOMER_SLIDES} />
       </section>
-      
-      <section className="w-full py-16 pb-32">
-        <UniversalCarousel slides={CUSTOMER_QUOTE_SLIDES} />
+ 
+      <section className="w-full pt-32  pb-24 w-full max-w-[1600px] mx-auto px-8 md:px-28 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+          <div className="flex flex-col gap-4 order-2 lg:order-1 lg:col-span-5">
+            <h1 className="h1-responsive text-[#332E2E]">
+              Look For the Villagers Badge
+            </h1>
+            <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
+              <p>When you see this badge, you know that business is:</p>
+              <ul className="space-y-2">
+                <li>✓ Certified locally-owned (not a chain or franchise)</li>
+                <li>✓ Invested in your community (they live and give here)</li>
+                <li>✓ What makes your town unique (the funky, authentic places you love)</li>
+              </ul>
+              <p>These are the businesses worth protecting.</p>
+          
+            </div>
+          </div>
+
+          <div className="order-1 lg:order-2 lg:col-span-7 flex justify-center items-center">
+            <div className="w-full aspect-3/2  mx-auto rounded-t-[32px] rounded-b-[32px] overflow-hidden">
+              <Image
+                src="/StoreBadge_02.png"
+                alt="Store Badge"
+                width={300}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
       </section>
+
+      <section className="w-full pt-0 pb-24 md:pt-8 md:pb-32 w-full max-w-[1600px] mx-auto px-8 md:px-28 relative">
+  
+          <Refferal />
+        </section>
 
       <Footer onContactClick={openPopup} />
 

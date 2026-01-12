@@ -94,33 +94,35 @@ export const OWNER_QUOTE_SLIDES: CarouselSlide[] = [
 // --- Customer Slides ---
 
 export const CUSTOMER_SLIDES: CarouselSlide[] = [
-  {
-    id: "chart",
-    type: "chart",
-    title: "It's your Village.<br /> Be a part of it.",
-    description: "you'll get to know the shops and stores you love — and they'll get to know you and what you love. Villagers makes you the top priority of their business. you're as valued as you should be.",
-    chartConfig: {
-      largePercentage: "85%",
-      largeLabel: "Total Sales",
-      smallPercentage: "35%",
-      smallLabel: "customers",
-    },
-  },
+ 
   {
     id: "impact",
     type: "image",
     imageSrc: "/Customer_07.png",
     imageAlt: "Community Impact",
-    title: "So much more than shopping.",
-    description: "There's a reason you return to your favorite stores. Maybe you love the owner. Maybe you love the service or the products. Villagers knows there is nothing more valuable than maintaining a supportive and thriving place for you to go. Your Local Impact Receipt builds real loyalty and connection between you and the places you love.",
+    title: "Let's make shopping <br />personal again.",
+    description: "In the 1980s, local merchants earned about 50% of all foot traffic. Today, that number has dropped to 28%, and the personal relationships that once defined local businesses are fading. Villagers believes those connections can exist again.",
+  },
+
+  {
+    id: "chart",
+    type: "chart",
+    title: "Be Recognized by real people",
+    description: "Villagers helps local shops recognize the 35% of customers who drive 80% of their business, turning everyday visits into real relationships.",
+    chartConfig: {
+      largePercentage: "85%",
+      largeLabel: "Total Sales",
+      smallPercentage: "35%",
+      smallLabel: "you",
+    },
   },
   {
     id: "engage",
     type: "image",
     imageSrc: "/Customer_10.png",
     imageAlt: "Thrive Together",
-    title: "They thrive, you win.",
-    description: "Villagers AI system does so much for shop Owners. Email, SMS, events, and AI insights — all in one place. These tools allow them to keep in touch with you the very best way, personally and authentically.",
+    title: "Small shifts, real impact.",
+    description: "Moving just 3% of online purchases back to local merchants would create immediate, lasting benefits for local businesses and the communities they support.",
   },
   {
     id: "value",
