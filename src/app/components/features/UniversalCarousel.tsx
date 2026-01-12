@@ -61,6 +61,9 @@ export default function UniversalCarousel({
     // Shared container class for consistent height across all slide types
     const containerClass = "relative w-full h-[350px] sm:h-[550px] lg:h-[450px] xl:h-[550px] flex items-center justify-center";
 
+    // Larger container class specifically for productHighlight slides
+    const productHighlightContainerClass = "relative w-full h-[400px] sm:h-[650px] lg:h-[550px] xl:h-[650px] flex items-center justify-center";
+
     if (slide.type === "chart") {
       return (
         <div className={containerClass}>
@@ -69,7 +72,22 @@ export default function UniversalCarousel({
       );
     }
 
-    // All other types have images
+    if (slide.type === "productHighlight") {
+      return (
+        <div className={productHighlightContainerClass}>
+          <Image
+            src={slide.imageSrc}
+            alt={slide.imageAlt}
+            fill
+            className="object-contain object-center"
+            sizes="(max-width: 640px) 400px, (max-width: 1024px) 500px, 700px"
+            priority={index === 0}
+          />
+        </div>
+      );
+    }
+
+    // All other types have images with rounded corners
     const imageSrc = slide.type === "image" || slide.type === "quote" || slide.type === "quote-with-logo" ? slide.imageSrc : "";
     const imageAlt = slide.type === "image" || slide.type === "quote" || slide.type === "quote-with-logo" ? slide.imageAlt : "";
 
@@ -87,7 +105,7 @@ export default function UniversalCarousel({
   };
 
   const renderContent = (slide: CarouselSlide) => {
-    if (slide.type === "chart" || slide.type === "image") {
+    if (slide.type === "chart" || slide.type === "image" || slide.type === "productHighlight") {
       return (
         <>
           <h1

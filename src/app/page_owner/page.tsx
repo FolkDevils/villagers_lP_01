@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import UniversalCarousel from "../components/features/UniversalCarousel";
 import Pricing from "../components/features/Pricing";
 import Footer from "../components/layout/Footer";
@@ -76,8 +77,9 @@ export default function Home() {
       <HeroSection
         backgroundImage="/ownerHero02a.png"
         mobileBackgroundImage="/heroOwner_mobile.png"
-        title={<>They're not customers.<br />They're Villagers.</>}
-        description="Villagers helps local businesses like yours focus on the 35% of the people in your immediate area who drive 80% of your revenue — turning everyday purchases into lasting relationships and measurable growth."
+        title={<>Real experiences and real relationships.</>}
+        description="
+Local Merchants have a superpower giant stores don&apos;t. Authentic experiences, personal connections, and real human moments. They are the cornerstone of the community. You just need tools built to enhance that. "
         buttonText="Become a villager"
         onButtonClick={() => openPopup('default')}
       />
@@ -87,10 +89,10 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-5">
               <h1 className="h1-responsive text-[#332E2E]">
-                Every purchase they make tells a story of community Impact.
+              Villagers enables you to turn IRL relationships into lasting loyalty
               </h1>
               <div className="p-responsive text-[#333333] space-y-6 leading-snug">
-                <p>When a customer see how much of each purchase stays local, supports jobs, and strengthens public services, they come back, not just to shop, but to belong.</p>
+                <p> without the overwhelming complexity, the spreadsheets, or managing multiple apps. It’s never been a better time to be a local merchant. </p>
               </div>
             </div>
 
@@ -107,9 +109,7 @@ export default function Home() {
       <section ref={section2Ref} className="w-full py-16">
         <UniversalCarousel slides={OWNER_SLIDES} />
       </section>  
-      <section className="w-full py-16">
-        <UniversalCarousel slides={OWNER_QUOTE_SLIDES} />
-      </section>
+
 
       <div className="w-full max-w-[1600px] mx-auto px-8 md:px-28 space-y-32 pb-20">
         <section id="pricing-section" ref={pricingRef} className="w-full">
@@ -119,9 +119,35 @@ export default function Home() {
         <section id="newsletter-signup" className="w-full">
           <NewsletterSignup />
         </section>
+
+        <section ref={section1Ref} className="w-full pb-32">
+          <div className="flex flex-col items-center gap-8">
+            <div className="flex justify-center items-center">
+              <div className="w-64 h-64 mx-auto">
+                <Image
+                  src="/trustBadge.svg"
+                  alt="Trust Badge"
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4 text-center max-w-[900px] mx-auto">
+              <h1 className="h1-responsive text-[#332E2E]" >
+              Durham-born by a local boutique owner.<br />Fellow merchant-tested. Rebuilding the Village™
+              </h1>
+
+                <p className="text-center max-w-[700px] mx-auto"> When your customers see this badge in your window, they know you're certified locally-owned, invested in community, and part of the movement.
+                </p>
+        
+            </div>
+          </div>
+        </section>
       </div>
 
-      <Footer />
+      <Footer onContactClick={() => openPopup('default')} />
 
       <StickyBottomCTA 
         onButtonClick={() => openPopup('default')}

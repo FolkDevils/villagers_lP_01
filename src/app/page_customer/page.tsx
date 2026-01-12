@@ -75,7 +75,7 @@ export default function Home() {
         <UniversalCarousel slides={CUSTOMER_QUOTE_SLIDES} />
       </section>
 
-      <Footer />
+      <Footer onContactClick={openPopup} />
 
       <StickyBottomCTA 
         onButtonClick={openPopup}

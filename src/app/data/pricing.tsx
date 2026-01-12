@@ -6,62 +6,67 @@ export interface PricingTier {
   period: string;
   description: React.ReactNode;
   features: string[];
+  buttonText?: string;
 }
 
 export const PRICING_TIERS: PricingTier[] = [
   {
-    name: "Start Building",
+    name: "Get Credit for Being Local ",
     price: "29",
     period: "/mo",
+    buttonText: "Learn More",
     description: (
       <>
-        Recommended for all locally <br /> owned businesses
+       Turn "Support Local" desires into repeat customers.
       </>
     ),
     features: [
-      "Customers receive a Local Impact Receipt with every purchase",
-      "AI-driven business insights (3 per weekly summary)",
-      "Cross promote fellow Villagers local businesses",
+      "Every customer receives their monthly Community Impact Statement that shows them their real economic impact to your community",
+      "They see which local businesses they're supporting (including you!)",
+      "They track their 'local sustainer' status: Supporter → Champion → Hero",
+      "You get featured in cross-promotion to other merchants' customers",
+      "Weekly AI insights about your top customers",
     ],
   },
   {
-    name: "Relationship Builder",
-    price: "199",
+    name: "Know Your Real Customers",
+    price: "179",
     period: "/mo",
+    buttonText: "Join the waitlist",
     description: (
       <>
-        Recommended for merchants <br /> with annual revenue $500k-$1M
+        Build Relationships With The 35% Who Matter Most
       </>
     ),
     features: [
-      "Customers receive a Local Impact Receipt with every purchase",
-      "Cross promote fellow Villagers local businesses",
-      "Enhanced AI-driven business insights Dashboard",
-      "Customer Profiles (CRM)",
-      "Enriched Customer Data (top 100)",
-      "AI driven \"next best actions\" and personalized AI pre-drafted emails (3 / day)",
+      "Everything in Tier 1",
+      "Automatic segmentation of your customers: See the 35% driving 80% of revenue",
+      "Rich CRM of all your customers and AI-enriched profiles for your VIPs",
+      "AI pre-drafted email personal touches: thank-yous, win-back messages, etc. Send manually or set it and forget it: your choice.",
+      "Integrated email w/ Automated google ",
+      "\"Ask Anything\" AI assistant answers questions about your customers and business",
+      "Pre-built business insights show you trends and growth opportunities",
     ],
   },
   {
     name: "Community Builder",
-    price: "349",
+    price: "299",
     period: "/mo",
+    buttonText: "Join the waitlist",
     description: (
       <>
         Recommended for merchants who have <br /> (or want to have) annual revenue above $1M
       </>
     ),
     features: [
-      "Customers receive a Local Impact Receipt with every purchase",
-      "Cross promote fellow Villagers local businesses",
-      "Enhanced AI-driven business insights Dashboard",
-      "Customer Profiles (CRM)",
-      "Enriched Customer Data (Top 35%)",
-      "AI driven \"next best actions\" and personalized AI pre-drafted emails (unlimited)",
-      "Group emails (unlimited)",
-      "Integrated SMS (unlimited)",
-      "Integrated event and appointment scheduling (unlimited)",
-      "Enhanced cross-promotional collaboration (unlimited)",
+      "Everything in Tier 1 & 2",
+      "AI-enriched profiles for ALL your VIPs and Regulars",
+      "Unlimited \"Ask Anything\" about any customer or trend",
+      "Integrated email and SMS with unlimited AI pre-drafts to help you move with speed",
+      "\"Next best actions\" recommendation engine to help drive focus",
+      "Integrated appointment and event scheduling",
+      "Cross-merchant insights and joint promotional opportunities",
+      "Direct chat with other local merchants in your network",
     ],
   },
 ];

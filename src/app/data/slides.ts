@@ -4,6 +4,16 @@ import { CarouselSlide } from "../../types/slides";
 
 export const OWNER_SLIDES: CarouselSlide[] = [
   {
+    id: "impact",
+    type: "productHighlight",
+    imageSrc: "/phone_04.png",
+    imageAlt: "Local Impact",
+    title: "Easy tools that turn local pride into repeat customers. ",
+    description: "Your customers want experiences and relationships. It's never been a better time to be a local merchant.",
+  },
+  
+  
+  {
     id: "chart",
     type: "chart",
     title: "Know Your Village",
@@ -15,14 +25,7 @@ export const OWNER_SLIDES: CarouselSlide[] = [
       smallLabel: "customers",
     },
   },
-  {
-    id: "impact",
-    type: "image",
-    imageSrc: "/block02_image_05.png",
-    imageAlt: "Local Impact",
-    title: "What impacts one, impacts us all",
-    description: "Each purchase triggers a Local Impact Receipt showing how dollars stay local and support the community. Customers see their impact, and you automatically collect verified emails. The Local Impact Receipt builds loyalty by illustrating purpose and connection",
-  },
+ 
   {
     id: "engage",
     type: "image",

@@ -3,7 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+interface FooterProps {
+  onContactClick?: () => void;
+}
+
+export default function Footer({ onContactClick }: FooterProps) {
   return (
     <footer className="w-full bg-[#332E2E] px-6 md:px-12 py-6">
       <div className=" mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
@@ -21,12 +25,12 @@ export default function Footer() {
           >
             Terms & Conditions
           </Link>
-          <Link
-            href="#"
-            className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
+          <button
+            onClick={onContactClick}
+            className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase bg-transparent border-none cursor-pointer"
           >
             Contact
-          </Link>
+          </button>
         </div>
 
         {/* Logo */}

@@ -61,13 +61,13 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
                 </div>
               </div>
 
-              <Button 
+              <Button
                 onClick={onLearnMoreClick}
                 variant="outline"
                 size="medium"
                 className="w-full mt-0"
               >
-                Learn More
+                {tier.buttonText || "Learn More"}
               </Button>
             </div>
 

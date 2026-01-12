@@ -2,7 +2,7 @@
 
 export interface BaseSlide {
   id: string;
-  type: "chart" | "image" | "quote" | "quote-with-logo";
+  type: "chart" | "image" | "quote" | "quote-with-logo" | "productHighlight";
 }
 
 export interface ChartSlide extends BaseSlide {
@@ -19,6 +19,14 @@ export interface ChartSlide extends BaseSlide {
 
 export interface ImageSlide extends BaseSlide {
   type: "image";
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  description: React.ReactNode;
+}
+
+export interface ProductHighlightSlide extends BaseSlide {
+  type: "productHighlight";
   imageSrc: string;
   imageAlt: string;
   title: string;
@@ -43,5 +51,5 @@ export interface QuoteWithLogoSlide extends BaseSlide {
   logoHeight?: number;
 }
 
-export type CarouselSlide = ChartSlide | ImageSlide | QuoteSlide | QuoteWithLogoSlide;
+export type CarouselSlide = ChartSlide | ImageSlide | QuoteSlide | QuoteWithLogoSlide | ProductHighlightSlide;
 

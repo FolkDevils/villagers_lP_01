@@ -12,12 +12,12 @@ interface FormProps {
 export default function Form({ 
   title = (
     <>
-      Join the Movement. <br />
-      Build Your Village.
+      You Have the Superpower. <br />
+      You Just Needed the Data and the Tools.
     </>
   ),
-  description = "Sign up for the Villagers newsletter to stay in the know about what's happening locally, new shops, events, and the people who keep our community thriving.",
-  buttonText = "Sign Up Now",
+  description = "The giants have their data and infrastructure. Now local has theirs. Reach out to schedule a demo today.",
+  buttonText = "Start Building",
   onSubmit
 }: FormProps) {
   
@@ -99,7 +99,7 @@ export default function Form({
           type="submit"
           variant="primary"
           size="medium"
-          className="mt-4"
+          className="mt-0"
         >
           {buttonText}
         </Button>
