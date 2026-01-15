@@ -94,9 +94,9 @@ export default function Home() {
             <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
               <p>When you see this badge, you know that business is:</p>
               <ul className="space-y-2">
-                <li>✓ Certified locally-owned (not a chain or franchise)</li>
-                <li>✓ Invested in your community (they live and give here)</li>
-                <li>✓ What makes your town unique (the funky, authentic places you love)</li>
+                <li>✓ Locally-owned (not a chain or franchise)</li>
+                <li>✓ Investing in your community (they live and give here)</li>
+                <li>✓ What keeps your community unique (the funky, authentic places you love)</li>
               </ul>
               <p>These are the businesses worth protecting.</p>
           

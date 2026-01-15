@@ -30,7 +30,7 @@ export const OWNER_SLIDES: CarouselSlide[] = [
     title: "Community Builder",
     description: "<br/><strong>Go Full Arsenal. You’re great in person. Now be great at scale.</strong><br/><br/>Unlock the full power of your data and build lasting relationships with your best customers. Create bespoke events, collaborate with other local merchants on joint promotions, and get AI-powered 'next best actions' for every customer interaction.",
   },
-
+  
 ];
 
 export const OWNER_QUOTE_SLIDES: CarouselSlide[] = [
@@ -89,15 +89,15 @@ export const CUSTOMER_SLIDES: CarouselSlide[] = [
     type: "image",
     imageSrc: "/Customer_07.png",
     imageAlt: "Community Impact",
-    title: "Let's make shopping <br />personal again.",
-    description: "In the 1980s, local merchants earned about 50% of all foot traffic. Today, that number has dropped to 28%, and the personal relationships that once defined local businesses are fading. Villagers believes those connections can exist again.",
+    title: "We're losing our villages - but we can turn it around.",
+    description: "Local businesses have dropped from 50% to 28% of the retail market since 2000. Not because we stopped caring, but because chains and e-commerce had better tools. Did you know: if your community* shifted just 3% of spending back to local merchants, it would create 1,200 new jobs, adds Millions annually for schools and infrastructure, and add $100M circulating right here at home. *town of 350k",
   },
 
   {
     id: "chart",
     type: "chart",
-    title: "Be Recognized by real people",
-    description: "Villagers helps local shops recognize the 35% of customers who drive 80% of their business, turning everyday visits into real relationships.",
+    title: "See your Community Impact Grow",
+    description: "Every month, you'll receive your Community Impact Statement showing exactly how much you invested in local businesses, your economic multiplier effect, and how many local jobs you're supporting alongside other Villagers. Even better, a shift of your dollars demonstrates your engagement with real people in real life in your real community. It's better for your mental health.",
     chartConfig: {
       largePercentage: "85%",
       largeLabel: "Total Sales",
@@ -110,16 +110,16 @@ export const CUSTOMER_SLIDES: CarouselSlide[] = [
     type: "image",
     imageSrc: "/Customer_10.png",
     imageAlt: "Thrive Together",
-    title: "Small shifts, real impact.",
-    description: "Moving just 3% of online purchases back to local merchants would create immediate, lasting benefits for local businesses and the communities they support.",
+    title: "In a real village, neighbors know each other. That's what we're building here.",
+    description: "Give your email when you support at a Villagers merchant, and merchants will see you're a local supporter and exactly how important you are to their business. They'll invite you to special events, sales, and share new products you'll love. It's how you get the insider treatment for being a Regular.",
   },
   {
     id: "value",
     type: "image",
     imageSrc: "/Customer_11.png",
     imageAlt: "Belong",
-    title: "Be a part of it all.",
-    description: "Nothing feels better than a spirit of belonging. Villagers brings communities together. Our shared goal is for the neighborhood you love and live in to thrive and prosper. Together.",
+    title: "You Belong",
+    description: "Nothing feels better than a spirit of belonging. You're what makes your community amazing. Our shared goal is for the neighborhood you love and live in to thrive and prosper. Together.",
   },
 ];
 
