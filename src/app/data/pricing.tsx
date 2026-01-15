@@ -14,7 +14,7 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Get Credit for Being Local ",
     price: "29",
     period: "/mo",
-    buttonText: "Learn More",
+    buttonText: "Get started",
     description: (
       <>
        Turn "Support Local" desires into repeat customers.
@@ -32,7 +32,7 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Know Your Real Customers",
     price: "179",
     period: "/mo",
-    buttonText: "Join the waitlist",
+    buttonText: "Beta - Join the waitlist",
     description: (
       <>
         Build Relationships With The 35% Who Matter Most
@@ -52,10 +52,10 @@ export const PRICING_TIERS: PricingTier[] = [
     name: "Community Builder",
     price: "299",
     period: "/mo",
-    buttonText: "Join the waitlist",
+    buttonText: "Beta - Join the waitlist",
     description: (
       <>
-        Recommended for merchants who have <br /> (or want to have) annual revenue above $1M
+        Recommended for merchants who have (or want to have) annual revenue above $1M
       </>
     ),
     features: [

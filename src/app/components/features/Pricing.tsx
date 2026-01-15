@@ -63,9 +63,13 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
 
               <Button
                 onClick={onLearnMoreClick}
-                variant="outline"
+                variant={index === 0 ? "primary" : "outline"}
                 size="medium"
-                className="w-full mt-0"
+                className={`w-full mt-0 ${
+                  index === 0
+                    ? "bg-[#FF4930] text-white hover:bg-[#E63946] hover:text-white border-[#FF4930] hover:border-[#E63946]"
+                    : "bg-[#332e2e] text-[#FF4930] hover:bg-[#2a2525] hover:text-[#FF4930] border-[#332e2e] hover:border-[#2a2525]"
+                }`}
               >
                 {tier.buttonText || "Learn More"}
               </Button>

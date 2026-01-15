@@ -12,7 +12,6 @@ import FormPopup from "../components/features/FormPopup";
 import StickyBottomCTA from "../components/layout/StickyBottomCTA";
 import NewsletterSignup from "../components/features/NewsletterSignup";
 import FAQ from "../components/features/FAQ";
-import Button from "../components/ui/Button";
 import { useScrollAnimations } from "../../hooks/useScrollAnimations";
 import { OWNER_SLIDES, OWNER_QUOTE_SLIDES } from "../data/slides";
 
@@ -195,13 +194,12 @@ The giants aren't going anywhere. But neither are you.
          </p>
 
                 <div className="mt-8">
-                  <Button
+                  <button
                     onClick={() => openPopup('default')}
-                    variant="primary"
-                    size="large"
+                    className="bg-[#FF4930] text-white hover:bg-[#E63946] hover:text-white border-2 border-[#FF4930] hover:border-[#E63946] px-12 py-5 text-xl font-semibold uppercase rounded-lg transition-all duration-300 cursor-pointer"
                   >
                     Become a Villager
-                  </Button>
+                  </button>
                 </div>
 
             </div>
