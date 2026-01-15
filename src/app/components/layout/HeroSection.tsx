@@ -41,7 +41,7 @@ export default function HeroSection({
   };
 
   return (
-    <section className="relative w-full h-[750px] md:h-[880px] flex items-end">
+    <section className="relative w-full h-[850px] md:h-[880px] flex items-end">
       {/* Desktop Background Image */}
       <Image
         src={backgroundImage}
