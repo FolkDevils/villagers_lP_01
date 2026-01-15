@@ -16,7 +16,7 @@ export default function Refferal() {
           <h2 className="font-playfair font-bold text-3xl md:text-5xl leading-tight text-[#FF4930]">
             Know a Local Business That Should Join?
           </h2>
-          <p className="text-white text-sm md:text-base leading-relaxed ">
+          <p className="text-white p-responsive leading-relaxed ">
           The more merchants that join, the more impact we can show and the stronger your community becomes.  </p>
         </div>
 
@@ -31,7 +31,7 @@ export default function Refferal() {
               placeholder="Business name*"
               required
               aria-required="true"
-              className="w-full bg-white/10 rounded-full px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
+              className="w-full bg-white/10 rounded-lg px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
             />
           </div>
 
@@ -42,7 +42,7 @@ export default function Refferal() {
               name="businessContact"
               type="text"
               placeholder="Business website or Instagram (or email)"
-              className="w-full bg-white/10 rounded-full px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
+              className="w-full bg-white/10 rounded-lg px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
             />
           </div>
 
