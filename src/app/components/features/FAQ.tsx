@@ -23,6 +23,18 @@ const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Can I cancel anytime?",
     answer: "Yes. No contracts. Cancel anytime."
+  },
+  {
+    question: "Will this actually increase my revenue?",
+    answer: "Our founding merchant (a Durham boutique) grew revenue by 89%, eliminated $300/month in redundant tools, and increased margins by 4%. Results vary, but relationship marketing works when you know your real customers."
+  },
+  {
+    question: "What kind of businesses use Villagers?",
+    answer: "Boutiques, coffee shops, restaurants, bookstores, salons, bike shops—any local business where relationships matter. We exclusively support locally owned businesses."
+  },
+  {
+    question: "Is my data private?",
+    answer: "Absolutely. It's also deleted if you ever chose not to be part of the Villager network. We only use deidentified aggregate data to help provide all local merchants macro views into local commerce trends."
   }
 ];
 

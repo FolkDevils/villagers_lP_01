@@ -12,6 +12,7 @@ import FormPopup from "../components/features/FormPopup";
 import StickyBottomCTA from "../components/layout/StickyBottomCTA";
 import NewsletterSignup from "../components/features/NewsletterSignup";
 import FAQ from "../components/features/FAQ";
+import Button from "../components/ui/Button";
 import { useScrollAnimations } from "../../hooks/useScrollAnimations";
 import { OWNER_SLIDES, OWNER_QUOTE_SLIDES } from "../data/slides";
 
@@ -180,6 +181,34 @@ export default function Home() {
 
         <section className="w-full pb-32">
           <div className="flex flex-col items-center gap-8">
+        
+
+            <div className="flex flex-col gap-4 text-center text-[#332E2E] max-w-[900px] mx-auto">
+              <h1 className="h1-responsive text-[#332E2E]" >
+              You Have the Superpower. You Just Needed the Infrastructure.
+              </h1>
+
+                <p className="text-center max-w-[700px] text-[#332E2E] mx-auto">
+                  For 20 years, e-commerce has had the tools. The data. The automation. The AI.
+                  <br/> <br/> Now local does too. <br/> <br/>
+The giants aren't going anywhere. But neither are you.
+         </p>
+
+                <div className="mt-8">
+                  <Button
+                    onClick={() => openPopup('default')}
+                    variant="primary"
+                    size="large"
+                  >
+                    Become a Villager
+                  </Button>
+                </div>
+
+            </div>
+          </div>
+        </section>
+        <section className="w-full pb-32">
+          <div className="flex flex-col items-center gap-8">
             <div className="flex justify-center items-center">
               <div className="w-64 h-64 mx-auto">
                 <Image
@@ -194,10 +223,12 @@ export default function Home() {
 
             <div className="flex flex-col gap-4 text-center text-[#332E2E] max-w-[900px] mx-auto">
               <h1 className="h1-responsive text-[#332E2E]" >
-              Durham-born by a local boutique owner.<br />Fellow merchant-tested. Rebuilding the Village.
-              </h1>
+              Born in a Durham boutique. Fellow merchant-tested.<br/>
+Rebuilding the Village™
+  </h1>
 
-                <p className="text-center max-w-[700px] text-[#332E2E] mx-auto"> When your customers see this badge in your window, they know you're certified locally-owned, invested in community, and part of the movement.
+                <p className="text-center max-w-[700px] text-[#332E2E] mx-auto"> 
+                When customers see this badge in your window, they know you're part of the Village—locally-owned and investing in community.
                 </p>
 
             </div>
