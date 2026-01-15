@@ -11,6 +11,7 @@ import HeroSection from "../components/layout/HeroSection";
 import FormPopup from "../components/features/FormPopup";
 import StickyBottomCTA from "../components/layout/StickyBottomCTA";
 import NewsletterSignup from "../components/features/NewsletterSignup";
+import FAQ from "../components/features/FAQ";
 import { useScrollAnimations } from "../../hooks/useScrollAnimations";
 import { OWNER_SLIDES, OWNER_QUOTE_SLIDES } from "../data/slides";
 
@@ -168,6 +169,15 @@ export default function Home() {
 
 
 
+
+
+        <section className="w-full py-20">
+          <div className="flex flex-col items-center gap-12">
+          
+            <FAQ />
+          </div>
+        </section>
+
         <section className="w-full pb-32">
           <div className="flex flex-col items-center gap-8">
             <div className="flex justify-center items-center">
@@ -189,7 +199,7 @@ export default function Home() {
 
                 <p className="text-center max-w-[700px] text-[#332E2E] mx-auto"> When your customers see this badge in your window, they know you're certified locally-owned, invested in community, and part of the movement.
                 </p>
-        
+
             </div>
           </div>
         </section>
