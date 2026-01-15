@@ -184,7 +184,7 @@ export default function Home() {
 
             <div className="flex flex-col gap-4 text-center text-[#332E2E] max-w-[900px] mx-auto">
               <h1 className="h1-responsive text-[#332E2E]" >
-              You Have the Superpower. You Just Needed the Infrastructure.
+              You Have the Superpower.<br /> You Just Needed the Infrastructure.
               </h1>
 
                 <p className="text-center max-w-[700px] text-[#332E2E] mx-auto">

@@ -44,8 +44,8 @@ export default function Home() {
       <HeroSection
         backgroundImage="/customerHero08.png"
         mobileBackgroundImage="/heroCustomer_mobile.png"
-        title={<>You Are What Makes Your Village Special.</>}
-        description="When you become a Villager you see how your choices strengthen your local economy, one purchase at a time.Every time you shop local, you're choosing experiences over transactions, neighbors over algorithms, and community over convenience."
+        title={<>Find Your Village</>}
+        description="The real world is happening all around you—at your local coffee shop, bookstore, and corner cafe. These aren't just stores—they're where deep product knowledge, passion, and friendly faces come together. It's where your community gathers."
         buttonText="Join the Village"
         onButtonClick={openPopup}
       />
@@ -55,13 +55,13 @@ export default function Home() {
           {/* Left Text Content */}
           <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-6">
             <h1 className="h1-responsive text-[#332E2E]">
-              You can see how your dollars support your community.
+              Turn Soulless Transactions into Real Experiences
             </h1>
 
             <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
-              <p><span className="font-bold">Shopping local means having real conversations.</span> Discovering new favorites, bumping into neighbors, supporting the chef who knows your order. You're experiencing the places that make your community yours.</p>
-              <p><span className="font-bold">The To Act Is Now.</span> Since 2000, locally-owned businesses have dropped from 50% to just 28% of the retail market. People didn't stop caring about experiences, e-commerce and chains just had better tools and infrastructure.</p>
-              <p><span className="font-bold">Here's where you come in.</span> Villagers shows you proof that your choices are making a difference. Together, we're choosing to live through relationships over transactions.</p>
+              <p>Your local merchants offer something algorithms never can: the retail owner who knows exactly what you'll love, the barista who remembers your order, the chef who gets excited explaining tonight's special.</p>
+              <p>These are your people. This is your village. When you shop local, you're choosing real conversations over chatbots, discovering hidden gems over sponsored results, and building relationships with neighbors who know your name.</p>
+              <p>The best part: Those meaningful experiences also create massive economic impact in your community.</p>
             </div>
           </div>
 

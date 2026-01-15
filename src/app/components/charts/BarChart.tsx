@@ -175,7 +175,7 @@ export default function BarChart({
         
         {/* Left Bar */}
         <div className="w-[48%] h-[80%] relative shrink-0">
-          <div className="absolute inset-0 rounded-t-[1000px] rounded-b-[20px] overflow-hidden">
+          <div className="absolute inset-0 rounded-t-[16px] rounded-b-[20px] overflow-hidden">
             {/* Background Image */}
             <Image
               ref={leftBarImageRef}
@@ -186,7 +186,7 @@ export default function BarChart({
             />
             
             {/* Coral Shape Overlay at Bottom with text contained inside to guarantee positioning */}
-            <div className="green-overlay absolute bottom-0 left-0 right-0 h-[70%] bg-[#FF4930] rounded-t-[1000px] z-10 flex flex-col items-center justify-center p-4">
+            <div className="green-overlay absolute bottom-0 left-0 right-0 h-[70%] bg-[#FF4930] rounded-t-[16px] z-10 flex flex-col items-center justify-center p-4">
               <span className="font-playfair font-semibold text-[60px] md:text-[60px] lg:text-[65px] leading-none text-[#FCFBF5]">
                 {leftBarPercentage}
               </span>
@@ -206,7 +206,7 @@ export default function BarChart({
 
         {/* Right Bar */}
         <div className="w-[48%] h-full relative shrink-0">
-          <div className="absolute inset-0 rounded-t-[500px] rounded-b-[20px] overflow-hidden">
+          <div className="absolute inset-0 rounded-t-[16px] rounded-b-[20px] overflow-hidden">
             <Image
               ref={rightBarImageRef}
               src={rightBarImage}
