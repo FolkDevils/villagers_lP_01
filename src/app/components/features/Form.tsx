@@ -39,7 +39,7 @@ export default function Form({
             </h2>
           )}
           {description && (
-            <p className="text-white text-sm md:text-base leading-relaxed max-w-xl">
+            <p className="text-white p-responsive leading-relaxed max-w-xl">
               {description}
             </p>
           )}
@@ -57,7 +57,7 @@ export default function Form({
             placeholder="First Name*" 
             required
             aria-required="true"
-            className="w-full bg-white/10 rounded-full px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
+            className="w-full bg-white/10 rounded-lg px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
           />
         </div>
         <div className="w-full">
@@ -67,7 +67,7 @@ export default function Form({
             name="lastName"
             type="text" 
             placeholder="Last Name" 
-            className="w-full bg-white/10 rounded-full px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
+            className="w-full bg-white/10 rounded-lg px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
           />
         </div>
         <div className="w-full">
@@ -77,7 +77,7 @@ export default function Form({
             name="phone"
             type="tel" 
             placeholder="Mobile Phone" 
-            className="w-full bg-white/10 rounded-full px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
+            className="w-full bg-white/10 rounded-lg px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
           />
         </div>
         <div className="w-full">
@@ -89,7 +89,7 @@ export default function Form({
             placeholder="Email*" 
             required
             aria-required="true"
-            className="w-full bg-white/10 rounded-full px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
+            className="w-full bg-white/10 rounded-lg px-8 py-4 text-white placeholder-white text-sm md:text-base border-white/30 outline-none focus:ring-2 focus:ring-[#FFFFFF]/50 focus:border-[#FFFFFF]"
           />
         </div>
         

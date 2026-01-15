@@ -77,9 +77,20 @@ export default function Home() {
       <HeroSection
         backgroundImage="/ownerHero02a.png"
         mobileBackgroundImage="/heroOwner_mobile.png"
-        title={<>Real experiences and real relationships.</>}
-        description="
-Local Merchants have a superpower giant stores don&apos;t. Authentic experiences, personal connections, and real human moments. They are the cornerstone of the community. You just need tools built to enhance that. "
+        title={<>Local Merchants Are the Cornerstone of Our Communities.</>}
+        description={
+          <>
+            You have what giants don&apos;t: passion, expertise, and the ability to create IRL relationships customers crave.
+            <br/>
+            <br/>
+            <strong>So why are you stuck with tools built for transactions?</strong>  <br/>
+            The battle isn&apos;t online vs. local. It&apos;s transactional vs. relational.
+            <br/>  <br/>
+            Villagers gives you relationship tools—built to turn your IRL superpower into unstoppable loyalty. No spreadsheets. No overwhelm. No juggling five apps that don&apos;t talk to each other.
+            <br/>  <br/>
+            <strong>Integrates in with all major POS systems. Setup in minutes.</strong>
+          </>
+        }
         buttonText="Become a villager"
         onButtonClick={() => openPopup('default')}
       />
@@ -89,10 +100,18 @@ Local Merchants have a superpower giant stores don&apos;t. Authentic experiences
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-5">
               <h1 className="h1-responsive text-[#332E2E]">
-              Villagers enables you to turn IRL relationships into lasting loyalty
+              Do you know how important you are to your community?
               </h1>
               <div className="p-responsive text-[#333333] space-y-6 leading-snug">
-                <p> without the overwhelming complexity, the spreadsheets, or managing multiple apps. It’s never been a better time to be a local merchant. </p>
+                <p>
+                  <b>52%</b> of every dollar stays local (vs. 6% online)
+                  <br/>  <br/>
+                  <b>3x multiplier</b> on every dollar spent locally
+                  <br/>  <br/>
+                  <b>$100M net impact and 1,200 new jobs</b> created per city* if only 3% of online and chain purchases moved to a locally owned store
+                  <br/>  <br/>
+                  *city of 350k
+                </p>
               </div>
             </div>
 
@@ -110,17 +129,46 @@ Local Merchants have a superpower giant stores don&apos;t. Authentic experiences
         <UniversalCarousel slides={OWNER_SLIDES} />
       </section>  
 
+      <section className="w-full pt-32  pb-24 w-full max-w-[1600px] mx-auto px-8 md:px-28 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+          <div className="flex flex-col gap-4 order-2 lg:order-2 lg:col-span-6">
+            <h1 className="h1-responsive text-[#332E2E]">
+            You have the IRL Superpower that matters. You just needed the tools built for you. 
+
+            </h1>
+            <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
+              <p>For 20 years, e-commerce and chains have had the tools. The data. The automation. The AI. 
+              </p>
+              <p>Now local does too. </p>
+
+<p>The giants aren’t going anywhere. But neither are you.
+</p>
+          
+            </div>
+          </div>
+
+          <div className="order-1 lg:order-1 lg:col-span-6 flex justify-center items-center">
+            <div className="w-full aspect-5/4  mx-auto rounded-t-[32px] rounded-b-[32px] overflow-hidden">
+              <Image
+                src="/block02_image_07.png"
+                alt="Store Badge"
+                width={300}
+                height={300}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="w-full max-w-[1600px] mx-auto px-8 md:px-28 space-y-32 pb-20">
         <section id="pricing-section" ref={pricingRef} className="w-full">
           <Pricing onLearnMoreClick={() => openPopup('pricing')} />
         </section>
 
-        <section id="newsletter-signup" className="w-full">
-          <NewsletterSignup />
-        </section>
 
-        <section ref={section1Ref} className="w-full pb-32">
+
+        <section className="w-full pb-32">
           <div className="flex flex-col items-center gap-8">
             <div className="flex justify-center items-center">
               <div className="w-64 h-64 mx-auto">

@@ -113,7 +113,7 @@ export default function UniversalCarousel({
             dangerouslySetInnerHTML={{ __html: slide.title }}
           />
           <div className="p-responsive text-[#333333] leading-snug">
-            {slide.description}
+            <div dangerouslySetInnerHTML={{ __html: slide.description as string }} />
           </div>
         </>
       );

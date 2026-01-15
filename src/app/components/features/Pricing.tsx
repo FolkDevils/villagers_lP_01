@@ -43,20 +43,20 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
             {/* Header */}
             <div className="flex flex-col items-center gap-6 mb-8 w-full">
               <div className="flex flex-col items-center gap-1">
-                <span className="font-poppins font-medium text-[#332e2e] text-sm uppercase text-center tracking-wide">
+                <span className="font-poppins font-medium text-[#332e2e] p-responsive uppercase text-center tracking-wide">
                   {tier.name}
                 </span>
                 
                 <div className="flex flex-col items-center text-[#332e2e]">
-                  <span className="font-playfair font-semibold text-[80px] mb-3 leading-none">
+                  <span className="font-playfair font-semibold text-[64px] mb-3 leading-none">
                     ${tier.price}
                   </span>
-                  <span className="font-poppins font-medium text-sm">
+                  <span className="font-poppins font-medium p-responsive">
                     {tier.period}
                   </span>
                 </div>
 
-                <div className="font-poppins font-medium text-[#332e2e] mt-2 text-xs text-center min-h-[48px]">
+                <div className="font-poppins font-medium text-[#332e2e] mt-2 p-responsive text-center min-h-[48px]">
                   {tier.description}
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default function Pricing({ onLearnMoreClick }: PricingProps) {
                   <div className="mt-1">
                     <CheckIcon />
                   </div>
-                  <p className="font-poppins font-medium text-[#332e2e] text-sm leading-tight">
+                  <p className="font-poppins font-medium text-[#332e2e] p-responsive leading-tight">
                     {feature}
                   </p>
                 </div>

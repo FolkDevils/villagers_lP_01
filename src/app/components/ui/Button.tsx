@@ -24,7 +24,7 @@ export default function Button({
 }: ButtonProps) {
   
   // Base styles that apply to all buttons
-  const baseStyles = "transition-all duration-300 rounded-full font-semibold uppercase cursor-pointer inline-block text-center";
+  const baseStyles = "transition-all duration-300 rounded-lg font-semibold uppercase cursor-pointer inline-block text-center";
   
   // Variant styles
   const variantStyles = {

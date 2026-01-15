@@ -5,7 +5,7 @@ interface HeroSectionProps {
   backgroundImage: string;
   mobileBackgroundImage?: string;
   title: string | React.ReactNode;
-  description: string;
+  description: string | React.ReactNode;
   buttonText: string;
   onButtonClick?: () => void;
   buttonHref?: string;
@@ -70,7 +70,7 @@ export default function HeroSection({
               {title}
             </h1>
             
-            <p className="font-poppins text-[#E4DBCD] text-base md:text-[16px] pb-4 leading-relaxed">
+            <p className="font-poppins text-[#E4DBCD] p-responsive pb-4 leading-relaxed">
               {description}
             </p>
             

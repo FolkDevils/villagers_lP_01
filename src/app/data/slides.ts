@@ -5,43 +5,32 @@ import { CarouselSlide } from "../../types/slides";
 export const OWNER_SLIDES: CarouselSlide[] = [
   {
     id: "impact",
+    type: "image",
+    imageSrc: "/block02_image_06.png",
+    imageAlt: "Local Impact",
+    title: "Get Credit for Being Local.",
+    description: "<br/><strong>Create loyalty just for being you</strong><br/><br/>Your customers choose you for the experiences, the connections, the sense of belonging you create—things online and chains can't automate.<br/><br/>Here's how it works: Each month, customers automatically receive a Community Impact Statement  showing how their purchases strengthen the local economy. You get powerful customerinsights and trends you've never seen before.<br/><br/>They remember why local matters. You know who your best customers are.<br/><br/>No new tools to learn. Just set it up and let it run.",
+    },
+  {
+
+    id: "chart",
     type: "productHighlight",
+    title: "Know Your Real Customers",
     imageSrc: "/phone_04.png",
     imageAlt: "Local Impact",
-    title: "Easy tools that turn local pride into repeat customers. ",
-    description: "Your customers want experiences and relationships. It's never been a better time to be a local merchant.",
-  },
+    description: "<br/><strong>Build Relationships With Intention</strong><br/><br/>Finally see the 35% of your customers making up 80% of your revenue. Have the power of Alder (Villagers AI) organize and help you engage your best customers with personal touches at just the right time (thank you, product recommendations, review requests).",
   
-  
-  {
-    id: "chart",
-    type: "chart",
-    title: "Know Your Village",
-    description: "Get to know the people who really matter— the 35% who drive 80% of your revenue. Villagers automatically brings your top customers to the forefront and helps you to keep them coming back, so you can focus where it matters most.",
-    chartConfig: {
-      largePercentage: "85%",
-      largeLabel: "Total Sales",
-      smallPercentage: "35%",
-      smallLabel: "customers",
-    },
   },
  
   {
     id: "engage",
     type: "image",
-    imageSrc: "/block02_image_06.png",
+    imageSrc: "/block02_image_05.png",
     imageAlt: "Engage & Grow",
-    title: "Engage & Grow",
-    description: "Email, SMS, events, and AI insights — all in one place. Your AI assistant, Alder, enriches customer profiles, drafts messages, and identifies your next best actions automatically. So you can be on the floor, talking to the people that matter.",
+    title: "Community Builder",
+    description: "<br/><strong>Go Full Arsenal. You’re great in person. Now be great at scale.</strong><br/><br/>Unlock the full power of your data and build lasting relationships with your best customers. Create bespoke events, collaborate with other local merchants on joint promotions, and get AI-powered 'next best actions' for every customer interaction.",
   },
-  {
-    id: "value",
-    type: "image",
-    imageSrc: "/block02_image_07.png",
-    imageAlt: "Create Value",
-    title: "Create Lasting Value",
-    description: "Villagers is all about helping you retain your best customers, elevate your regulars, and turn data into true connection points. Nothing grows your dream like real people and real contact. Villagers is here to support that.",
-  },
+
 ];
 
 export const OWNER_QUOTE_SLIDES: CarouselSlide[] = [
