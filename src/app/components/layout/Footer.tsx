@@ -13,23 +13,12 @@ export default function Footer({ onContactClick }: FooterProps) {
       <div className=" mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Navigation Links */}
         <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 pb-3 md:pb-0">
-          <Link
-            href="#"
-            className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="#"
-            className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase"
-          >
-            Terms & Conditions
-          </Link>
+     
           <button
             onClick={onContactClick}
             className="text-[#FCFBF5] hover:text-[#FF4930] transition-colors font-poppins font-semibold text-xs md:text-sm uppercase bg-transparent border-none cursor-pointer"
           >
-            Contact
+            Contact Us
           </button>
         </div>
 

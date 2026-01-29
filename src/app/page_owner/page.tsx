@@ -149,8 +149,7 @@ export default function Home() {
 
             <div className="flex flex-col gap-4 text-center text-[#332E2E] max-w-[900px] mx-auto">
               <h1 className="h1-responsive text-[#332E2E]" >
-              Born in a Durham boutique. Fellow merchant-tested.<br/>
-Rebuilding the Village™
+              When customers see this badge in your window, they know you're part of the Village – locally-owned and investing in community.
   </h1>
 
        
