@@ -8,17 +8,17 @@ export const OWNER_SLIDES: CarouselSlide[] = [
     type: "image",
     imageSrc: "/block02_image_06.png",
     imageAlt: "Local Impact",
-    title: "Get Credit for Being Local.",
-    description: "<br/><strong>Create loyalty just for being you</strong><br/><br/>Your customers choose you for the experiences, the connections, the sense of belonging you create—things online and chains can't automate.<br/><br/>Here's how it works: Each month, customers automatically receive a Community Impact Statement  showing how their purchases strengthen the local economy. You get powerful customerinsights and trends you've never seen before.<br/><br/>They remember why local matters. You know who your best customers are.<br/><br/>No new tools to learn. Just set it up and let it run.",
+    title: "Start With a Name and an Email",
+    description: "Real relationships begin with a name and email; they turn anonymous transactions into recognized customers and unlock your ability to remember, reach, and reward the people who drive your business most.",
     },
   {
 
     id: "chart",
     type: "productHighlight",
-    title: "Know Your Real Customers",
+    title: "Know Them and Personalize their Experience",
     imageSrc: "/phone_04.png",
     imageAlt: "Local Impact",
-    description: "<br/><strong>Build Relationships With Intention</strong><br/><br/>Finally see the 35% of your customers making up 80% of your revenue. Have the power of Alder (Villagers AI) organize and help you engage your best customers with personal touches at just the right time (thank you, product recommendations, review requests).",
+    description: "Once you know your customers, you can serve them better. It starts with a powerful snapshot of real impact: the Local Impact Statement. Each customer sees exactly how their dollars support the local community, and their loyalty deepens.",
   
   },
  
@@ -27,8 +27,8 @@ export const OWNER_SLIDES: CarouselSlide[] = [
     type: "image",
     imageSrc: "/block02_image_05.png",
     imageAlt: "Engage & Grow",
-    title: "Community Builder",
-    description: "<br/><strong>Go Full Arsenal. You’re great in person. Now be great at scale.</strong><br/><br/>Unlock the full power of your data and build lasting relationships with your best customers. Create bespoke events, collaborate with other local merchants on joint promotions, and get AI-powered 'next best actions' for every customer interaction.",
+    title: "Deepen the Connection",
+    description: "As your customers become a community, your tools grow with you. Villagers handle the busy work so you can amplify your personal touch: building the kind of loyalty big-box stores can't buy.<br/><br/>You provide the heart; we provide the infrastructure.",
   },
   
 ];
@@ -89,15 +89,15 @@ export const CUSTOMER_SLIDES: CarouselSlide[] = [
     type: "image",
     imageSrc: "/Customer_07.png",
     imageAlt: "Community Impact",
-    title: "We're losing our villages - but we can turn it around.",
-    description: "Local businesses have dropped from 50% to 28% of the retail market since 2000. Not because we stopped caring, but because chains and e-commerce had better tools. Did you know: if your community* shifted just 3% of spending back to local merchants, it would create 1,200 new jobs, adds Millions annually for schools and infrastructure, and add $100M circulating right here at home. *town of 350k",
+    title: "How You Create The Ripple Effect",
+    description: "<b>The Power of 3%</b> Your spending power has exponential impact. Shifting just 3% of your spending to local merchants pumps millions back into your community's schools and jobs, and keeps your village's unique spirit alive.",
   },
 
   {
     id: "chart",
     type: "chart",
-    title: "See your Community Impact Grow",
-    description: "Every month, you'll receive your Community Impact Statement showing exactly how much you invested in local businesses, your economic multiplier effect, and how many local jobs you're supporting alongside other Villagers. Even better, a shift of your dollars demonstrates your engagement with real people in real life in your real community. It's better for your mental health.",
+    title: "See Your Spending in Action",
+    description: "Get a personalized monthly <b>Local Impact Statement</b> showing exactly how your support strengthens your village and drives local prosperity.",
     chartConfig: {
       largePercentage: "85%",
       largeLabel: "Total Sales",
@@ -110,16 +110,16 @@ export const CUSTOMER_SLIDES: CarouselSlide[] = [
     type: "image",
     imageSrc: "/Customer_10.png",
     imageAlt: "Thrive Together",
-    title: "In a real village, neighbors know each other. That's what we're building here.",
-    description: "Give your email when you support at a Villagers merchant, and merchants will see you're a local supporter and exactly how important you are to their business. They'll invite you to special events, sales, and share new products you'll love. It's how you get the insider treatment for being a Regular.",
+    title: "When You Are Better Known, You Are Better Served",
+    description: "Share your name and email to unlock better service and real relationships. Local merchants want to know you, so they can serve you better, thank you personally, and grow alongside you.",
   },
   {
     id: "value",
     type: "image",
     imageSrc: "/Customer_11.png",
     imageAlt: "Belong",
-    title: "You Belong",
-    description: "Nothing feels better than a spirit of belonging. You're what makes your community amazing. Our shared goal is for the neighborhood you love and live in to thrive and prosper. Together.",
+    title: "Let's Lift the Whole Village.",
+    description: "If your favorite shop or restaurant isn't part of the Villagers network yet, invite them to discover the power of IRL relationships",
   },
 ];
 

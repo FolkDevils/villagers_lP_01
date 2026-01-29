@@ -44,8 +44,12 @@ export default function Home() {
       <HeroSection
         backgroundImage="/customerHero08.png"
         mobileBackgroundImage="/heroCustomer_mobile.png"
-        title={<>Find Your Village</>}
-        description="The real world is happening all around you—at your local coffee shop, bookstore, and corner cafe. These aren't just stores—they're where deep product knowledge, passion, and friendly faces come together. It's where your community gathers."
+        title={<>Explore What You Love. <br></br>Grow Your Village.</>}
+        description={
+          <>
+            Whatever you love, books, fashion, the outdoors, or unique dining, local specialty shops and restaurants are where <b>deep expertise fuels your passion</b>. These aren&apos;t just businesses; they&apos;re the heart of your community. Just by shopping, you create chances to <b>learn, discover, and belong.</b>
+          </>
+        }
         buttonText="Join the Village"
         onButtonClick={openPopup}
       />
@@ -55,13 +59,11 @@ export default function Home() {
           {/* Left Text Content */}
           <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-6">
             <h1 className="h1-responsive text-[#332E2E]">
-              Turn Soulless Transactions into Real Experiences
+              We Believe In Relationships Over Algorithms
             </h1>
 
             <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
-              <p>Your local merchants offer something algorithms never can: the retail owner who knows exactly what you'll love, the barista who remembers your order, the chef who gets excited explaining tonight's special.</p>
-              <p>These are your people. This is your village. When you shop local, you're choosing real conversations over chatbots, discovering hidden gems over sponsored results, and building relationships with neighbors who know your name.</p>
-              <p>The best part: Those meaningful experiences also create massive economic impact in your community.</p>
+              <p>Local merchants offer what algorithms can&apos;t: <b>real people who care about you and your community.</b> They know your usual order, your style, and your preferences, delivering personalized service and meaningful connection. And, every dollar you spend fuels your village&apos;s culture and economy in a powerful, lasting way.</p>
             </div>
           </div>
 
@@ -89,17 +91,11 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
           <div className="flex flex-col gap-4 order-2 lg:order-1 lg:col-span-5">
             <h1 className="h1-responsive text-[#332E2E]">
-              Look For the Villagers Badge
+              Look for the Villagers Badge
             </h1>
             <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
-              <p>When you see this badge, you know that business is:</p>
-              <ul className="space-y-2">
-                <li>✓ Locally-owned (not a chain or franchise)</li>
-                <li>✓ Investing in your community (they live and give here)</li>
-                <li>✓ What keeps your community unique (the funky, authentic places you love)</li>
-              </ul>
-              <p>These are the businesses worth protecting.</p>
-          
+              <p>The Villagers badge signals a business that puts <b>community first</b>. It means they are locally owned, eager to know you, and are actively investing in the tools to build community with you.</p>
+              <p><b>Join the movement today. It all starts with your first Local Impact Statement.</b></p>
             </div>
           </div>
 

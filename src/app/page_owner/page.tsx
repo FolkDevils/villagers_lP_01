@@ -78,18 +78,13 @@ export default function Home() {
       <HeroSection
         backgroundImage="/ownerHero02a.png"
         mobileBackgroundImage="/heroOwner_mobile.png"
-        title={<>Local Merchants Are the Cornerstone of Our Communities.</>}
+        title={<>Relationships Are A Local <br/>Merchant&apos;s Superpower</>}
         description={
           <>
-            You have what giants don&apos;t: passion, expertise, and the ability to create IRL relationships customers crave.
+            Stop competing for attention. Start building real relationships.
             <br/>
             <br/>
-            <strong>So why are you stuck with tools built for transactions?</strong>  <br/>
-            The battle isn&apos;t online vs. local. It&apos;s transactional vs. relational.
-            <br/>  <br/>
-            Villagers gives you relationship tools—built to turn your IRL superpower into unstoppable loyalty. No spreadsheets. No overwhelm. No juggling five apps that don&apos;t talk to each other.
-            <br/>  <br/>
-            <strong>Integrates in with all major POS systems. Setup in minutes.</strong>
+            While chains and online giants pour millions into digital noise, local merchants win with human connection and unforgettable experiences. Your edge is <b>Relational Retail:</b> the IRL loyalty that customers crave and that no algorithm can replicate.
           </>
         }
         buttonText="Become a villager"
@@ -101,17 +96,11 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="flex flex-col gap-4 max-w-[580px] order-2 lg:order-1 lg:col-span-5">
               <h1 className="h1-responsive text-[#332E2E]">
-              Do you know how important you are to your community?
+              Know Your Real Customers
               </h1>
               <div className="p-responsive text-[#333333] space-y-6 leading-snug">
                 <p>
-                  <b>52%</b> of every dollar stays local (vs. 6% online)
-                  <br/>  <br/>
-                  <b>3x multiplier</b> on every dollar spent locally
-                  <br/>  <br/>
-                  <b>$100M net impact and 1,200 new jobs</b> created per city* if only 3% of online and chain purchases moved to a locally owned store
-                  <br/>  <br/>
-                  *city of 350k
+                  Stop chasing every customer. Your core drives your revenue: prioritize them. Loyalty isn&apos;t points, it&apos;s the joy of being known and well-served. Villagers enables merchants to transform their best customers into passionate advocates.
                 </p>
               </div>
             </div>
@@ -130,37 +119,7 @@ export default function Home() {
         <UniversalCarousel slides={OWNER_SLIDES} />
       </section>  
 
-      <section className="w-full pt-32  pb-24 w-full max-w-[1600px] mx-auto px-8 md:px-28 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-          <div className="flex flex-col gap-4 order-2 lg:order-2 lg:col-span-6">
-            <h1 className="h1-responsive text-[#332E2E]">
-            You have the IRL Superpower that matters. You just needed the tools built for you. 
-
-            </h1>
-            <div className="p-responsive text-[#332E2E] space-y-6 leading-snug">
-              <p>For 20 years, e-commerce and chains have had the tools. The data. The automation. The AI. 
-              </p>
-              <p>Now local does too. </p>
-
-<p>The giants aren’t going anywhere. But neither are you.
-</p>
-          
-            </div>
-          </div>
-
-          <div className="order-1 lg:order-1 lg:col-span-6 flex justify-center items-center">
-            <div className="w-full aspect-5/4  mx-auto rounded-t-[32px] rounded-b-[32px] overflow-hidden">
-              <Image
-                src="/block02_image_07.png"
-                alt="Store Badge"
-                width={300}
-                height={300}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
       <div className="w-full max-w-[1600px] mx-auto px-8 md:px-28 space-y-32 pb-20">
         <section id="pricing-section" ref={pricingRef} className="w-full">
@@ -171,40 +130,9 @@ export default function Home() {
 
 
 
-        <section className="w-full py-20">
-          <div className="flex flex-col items-center gap-12">
-          
-            <FAQ />
-          </div>
-        </section>
+      
 
-        <section className="w-full pb-32">
-          <div className="flex flex-col items-center gap-8">
-        
-
-            <div className="flex flex-col gap-4 text-center text-[#332E2E] max-w-[900px] mx-auto">
-              <h1 className="h1-responsive text-[#332E2E]" >
-              You Have the Superpower.<br /> You Just Needed the Infrastructure.
-              </h1>
-
-                <p className="text-center max-w-[700px] text-[#332E2E] mx-auto">
-                  For 20 years, e-commerce has had the tools. The data. The automation. The AI.
-                  <br/> <br/> Now local does too. <br/> <br/>
-The giants aren't going anywhere. But neither are you.
-         </p>
-
-                <div className="mt-8">
-                  <button
-                    onClick={() => openPopup('default')}
-                    className="bg-[#FF4930] text-white hover:bg-[#E63946] hover:text-white border-2 border-[#FF4930] hover:border-[#E63946] px-12 py-5 text-xl font-semibold uppercase rounded-lg transition-all duration-300 cursor-pointer"
-                  >
-                    Become a Villager
-                  </button>
-                </div>
-
-            </div>
-          </div>
-        </section>
+  
         <section className="w-full pb-32">
           <div className="flex flex-col items-center gap-8">
             <div className="flex justify-center items-center">
@@ -225,13 +153,53 @@ The giants aren't going anywhere. But neither are you.
 Rebuilding the Village™
   </h1>
 
-                <p className="text-center max-w-[700px] text-[#332E2E] mx-auto"> 
-                When customers see this badge in your window, they know you're part of the Village—locally-owned and investing in community.
-                </p>
+       
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full pb-32">
+          <div className="flex flex-col items-center gap-8">
+        
+
+            <div className="flex flex-col gap-4 text-center text-[#332E2E] max-w-[900px] mx-auto">
+              <h1 className="h1-responsive text-[#332E2E]" >
+              Join the Movement
+              </h1>
+
+                <p className="text-center max-w-[700px] text-[#332E2E] mx-auto">
+                It all starts with the <b>Local Impact Statement</b>, monthly reports that combine customer spending across every Villagers merchant, demonstrating the difference they are making in their community.
+                </p> <p className="text-center max-w-[700px] text-[#332E2E] mx-auto">  
+Your customers become motivated by the multiplication of their impact. The data, automation, and AI work quietly behind the scenes supporting your business, so that you can focus on why you started your business in the first place.
+</p> <p className="text-center max-w-[700px] text-[#332E2E] mx-auto">
+<b>Set it up in 4 minutes. Everything else runs automatically.</b>
+</p> <p className="text-center max-w-[700px] text-[#332E2E] mx-auto">
+Let's grow our village together.
+
+         </p>
+
+                <div className="mt-8">
+                  <button
+                    onClick={() => openPopup('default')}
+                    className="bg-[#FF4930] text-white hover:bg-[#E63946] hover:text-white border-2 border-[#FF4930] hover:border-[#E63946] px-12 py-5 text-xl font-semibold uppercase rounded-lg transition-all duration-300 cursor-pointer"
+                  >
+                    Join Villagers Today
+                  </button>
+                </div>
 
             </div>
           </div>
         </section>
+
+
+        <section className="w-full py-20">
+          <div className="flex flex-col items-center gap-12">
+          
+            <FAQ />
+          </div>
+        </section>
+
+        
       </div>
 
       <Footer onContactClick={() => openPopup('default')} />
