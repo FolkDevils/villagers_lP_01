@@ -191,7 +191,7 @@ Let's grow our village together.
         </section>
 
 
-        <section className="w-full py-20">
+        <section className="w-full pb-20">
           <div className="flex flex-col items-center gap-12">
           
             <FAQ />
